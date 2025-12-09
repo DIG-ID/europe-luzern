@@ -1,6 +1,11 @@
 <?php
 /**
+ *
  * Template Name: Home Template
+ *
+ * @package website-name
+ * @subpackage Template
+ * @since 1.0.0
  */
 
 get_header();
