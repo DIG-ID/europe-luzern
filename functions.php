@@ -26,10 +26,8 @@ function ghe_theme_setup() {
 	//add_image_size( 'zimmer-image', 1400, 770, array( 'center', 'center' ) );
 
 }
-
 add_action( 'after_setup_theme', 'ghe_theme_setup' );
-
-/**
+/**  
  * Register our sidebars and widgetized areas.
  */
 function ghe_theme_footer_widgets_init() {

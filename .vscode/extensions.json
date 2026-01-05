@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "valeryanm.vscode-phpcs",
+    "bmewburn.vscode-intelephense-client"
+  ]
+}
