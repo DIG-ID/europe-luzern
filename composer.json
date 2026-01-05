@@ -1,6 +1,6 @@
 {
-  "name": "digid/starter-theme",
-  "description": "Starter WordPress theme with Laravel Mix and PHP tooling",
+  "name": "grand-hotel-europe/theme",
+  "description": "WordPress theme with Laravel Mix and PHP tooling",
   "type": "project",
   "require": {},
   "require-dev": {

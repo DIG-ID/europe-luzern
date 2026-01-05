@@ -20,7 +20,7 @@ mix
 
   .browserSync({
     proxy: {
-      target: "https://europe-luzern.digid/",
+      target: "https://grand-hotel-europe.digid/",
       ws: true,
     },
     https: true,

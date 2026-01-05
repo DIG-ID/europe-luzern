@@ -2,14 +2,14 @@
 /**
  * Setup theme
  */
-function digid_theme_setup() {
+function ghe_theme_setup() {
 
 	register_nav_menus(
 		array(
-			'main-menu'      => __( 'Main Menu', 'digid' ),
-			'main-mega-menu' => __( 'Main Mega Menu', 'digid' ),
-			'secondary-menu' => __( 'Secondary Menu', 'digid' ),
-			'copyright-menu' => __( 'Copyright Menu', 'digid' ),
+			'main-menu'      => __( 'Main Menu', 'grand-hotel-europe' ),
+			'main-mega-menu' => __( 'Main Mega Menu', 'grand-hotel-europe' ),
+			'secondary-menu' => __( 'Secondary Menu', 'grand-hotel-europe' ),
+			'copyright-menu' => __( 'Copyright Menu', 'grand-hotel-europe' ),
 		)
 	);
 
@@ -27,12 +27,12 @@ function digid_theme_setup() {
 
 }
 
-add_action( 'after_setup_theme', 'digid_theme_setup' );
+add_action( 'after_setup_theme', 'ghe_theme_setup' );
 
 /**
  * Register our sidebars and widgetized areas.
  */
-function digid_theme_footer_widgets_init() {
+function ghe_theme_footer_widgets_init() {
 
 	register_sidebar(
 		array(
@@ -58,25 +58,25 @@ function digid_theme_footer_widgets_init() {
 
 }
 
-add_action( 'widgets_init', 'digid_theme_footer_widgets_init' );
+add_action( 'widgets_init', 'ghe_theme_footer_widgets_init' );
 
-if ( ! function_exists( 'digid_get_font_face_styles' ) ) :
+if ( ! function_exists( 'ghe_get_font_face_styles' ) ) :
 	/**
 	 * Get font face styles.
 	 * This is used by the theme or editor to inject @import for Google Fonts.
 	 */
-	function digid_get_font_face_styles() {
+	function ghe_get_font_face_styles() {
 		return "
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Prata&display=swap');
 		";
 	}
 endif;
 
-if ( ! function_exists( 'digid_preload_webfonts' ) ) :
+if ( ! function_exists( 'ghe_preload_webfonts' ) ) :
 	/**
 	 * Preloads Google Fonts to improve performance.
 	 */
-	function digid_preload_webfonts() {
+	function ghe_preload_webfonts() {
 		?>
 		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,13 +84,13 @@ if ( ! function_exists( 'digid_preload_webfonts' ) ) :
 	}
 endif;
 
-add_action( 'wp_head', 'digid_preload_webfonts' );
+add_action( 'wp_head', 'ghe_preload_webfonts' );
 
 
 /**
  * Enqueue styles and scripts
  */
-function digid_theme_enqueue_styles() {
+function ghe_theme_enqueue_styles() {
 
 	//Get the theme data
 	$the_theme     = wp_get_theme();
@@ -99,7 +99,7 @@ function digid_theme_enqueue_styles() {
 	// Register Theme main style.
 	wp_register_style( 'theme-styles', get_template_directory_uri() . '/dist/css/main.css', array(), $theme_version );
 	// Add styles inline.
-	wp_add_inline_style( 'theme-styles', digid_get_font_face_styles() );
+	wp_add_inline_style( 'theme-styles', ghe_get_font_face_styles() );
 	// Enqueue theme stylesheet.
 	wp_enqueue_style( 'theme-styles' );
 	//https://use.typekit.net/evg0ous.css first loaded fonts library backup
@@ -109,7 +109,7 @@ function digid_theme_enqueue_styles() {
 	wp_enqueue_script( 'theme-scripts', get_stylesheet_directory_uri() . '/dist/js/main.js', array( 'jquery' ), $theme_version, true );
 }
 
-add_action( 'wp_enqueue_scripts', 'digid_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'ghe_theme_enqueue_styles' );
 
 
 /**
@@ -124,11 +124,11 @@ add_filter( 'wpcf7_autop_or_not', '__return_false' );
  *
  * @return string $priority The potentially altered priority.
  */
-function digid_theme_lower_yoast_metabox_priority( $priority ) {
+function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 	return 'core';
 }
 
-add_filter( 'wpseo_metabox_prio', 'digid_theme_lower_yoast_metabox_priority' );
+add_filter( 'wpseo_metabox_prio', 'ghe_theme_lower_yoast_metabox_priority' );
 
 
 // Theme custom template tags.
