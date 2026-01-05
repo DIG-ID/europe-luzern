@@ -130,9 +130,5 @@ out
 .yarn/install-state.gz
 .pnp.*
 
-
-# VSCode settings
-.vscode/
-
 # Local stub files
 php-stubs/
