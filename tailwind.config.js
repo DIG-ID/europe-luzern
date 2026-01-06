@@ -15,6 +15,7 @@ module.exports = {
       gilda: ['Gilda Display', 'serif'],
       barlow: ['barlow', 'sans-serif'],
       source: ['source-serif-4', 'serif'],
+      barlowCondensed: ['barlow-condensed', 'sans-serif'],
     },
 
     extend: {
