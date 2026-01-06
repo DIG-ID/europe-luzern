@@ -25,7 +25,7 @@ module.exports = {
       colors: {
         'darker': '#25211E',
         'dark': '#333333',
-        'sand': '#A7986E',
+        'gold': '#A7986E',
         'cream': '#F8F5F0',
       },
       transitionTimingFunction: {
