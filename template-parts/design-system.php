@@ -24,6 +24,7 @@
 		<div class="col-span-2 md:col-span-2 xl:col-span-3 mt-12 px-2 md:px-4 xl:px-8 border-Dark border-r-2">
 			<h1 class="title-secondary font-barlow">Titles</h1>
 			<p class="font-barlow mb-28">Source Serif 4</p>
+      <p class="overtitle mb-14">Overtitle</p>
 			<h1 class="title-main mb-14">H1 Title</h1>
 			<h2 class="title-secondary mb-14">H2 Title</h2>
       <h3 class="title-small">H3 Title</h3>
