@@ -1,5 +1,7 @@
 <div id="section-intro" class="section-intro xl:pt-0 xl:pb-36">
+  <?php if ( is_front_page() ) : ?>
   <div class="w-[1px] md:w-[1px] h-[56px] xl:h-[56px] bg-gold mx-auto" aria-hidden="true"></div>
+  <?php endif; ?>
   <div class="w-[1px] md:w-[690px] h-[1px] xl:h-[1px] bg-gold mb-5 mx-auto" aria-hidden="true"></div>
   <div class="intro-image px-14">
     <figure class="framed-photo-intro w-full">
