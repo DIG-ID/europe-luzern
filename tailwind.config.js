@@ -26,6 +26,7 @@ module.exports = {
       colors: {
         'darker': '#25211E',
         'dark': '#333333',
+        'dark-2': '#222222',
         'gold': '#A7986E',
         'cream': '#F8F5F0',
       },

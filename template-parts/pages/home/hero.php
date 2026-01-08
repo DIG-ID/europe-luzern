@@ -13,9 +13,9 @@
 <section id="section-hero" class="section-hero relative h-dvh w-full z-10">
   <figure>
     <?php
-    $bg_id = get_field( 'hero_image' );
-    if ( $bg_id ) :
-      echo wp_get_attachment_image( $bg_id, 'full', false, array( 'class' => 'absolute inset-0 w-full h-full object-cover' ) );
+    $hero_id = get_field( 'hero_image' );
+    if ( $hero_id ) :
+      echo wp_get_attachment_image( $hero_id, 'full', false, array( 'class' => 'absolute inset-0 w-full h-full object-cover' ) );
     endif;
     ?>
   </figure>
