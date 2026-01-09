@@ -1,45 +1,96 @@
+// Shared
+%framed-core
+  @apply relative
+  img
+    @apply block w-full h-auto
+
+%framed-pseudo
+  @apply content-[''] absolute border-gold
+
+// FULLWIDTH container image
+%framed-fw-size
+  @apply w-72 h-48
+
+%framed-fw-edge-bottom
+  @apply -bottom-5 border-b
+
+%framed-fw-offset-left
+  @apply -left-5 border-l
+
+%framed-fw-offset-right
+  @apply -right-5 border-r
+
+// REGULAR sized image
+%framed-rg-size
+  @apply w-48 h-48
+
+%framed-rg-edge-bottom
+  @apply -bottom-7 border-b
+
+%framed-rg-edge-top
+  @apply -top-7 border-t
+
+%framed-rg-offset-left
+  @apply -left-7 border-l
+
+%framed-rg-offset-right
+  @apply -right-7 border-r
+
 .framed
   &__fullwidth
-    &-both
-      @apply relative
-      img
-        @apply block w-full h-auto
-      &::before, &::after
-        @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
-      &::before
-        @apply -left-5 border-l
-      &::after
-        @apply -right-5 border-r
-    &-left
-      @apply relative
-      img
-        @apply block w-full h-auto
-      &::before
-        @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
-      &::before
-        @apply -left-5 border-l
-    &-right
-      @apply relative
-      img
-        @apply block w-full h-auto
-      &::after
-        @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
-      &::after
-        @apply -right-5 border-r
+    &--bottom
+      &-both
+        @extend %framed-core
+        &::before, &::after
+          @extend %framed-pseudo
+          @extend %framed-fw-size
+          @extend %framed-fw-edge-bottom
+        &::before
+          @extend %framed-fw-offset-left
+        &::after
+          @extend %framed-fw-offset-right
+      &-left
+        @extend %framed-core
+        &::before
+          @extend %framed-pseudo
+          @extend %framed-fw-size
+          @extend %framed-fw-edge-bottom
+          @extend %framed-fw-offset-left
+      &-right
+        @extend %framed-core
+        &::after
+          @extend %framed-pseudo
+          @extend %framed-fw-size
+          @extend %framed-fw-edge-bottom
+          @extend %framed-fw-offset-right
   &__regular
-    &-left
-      @apply relative
-      img
-        @apply block w-full h-auto
-      &::before
-        @apply content-[''] absolute w-48 h-48 -bottom-7 border-b border-gold
-      &::before
-        @apply -left-7 border-l
-    &-right
-      @apply relative
-      img
-        @apply block w-full h-auto
-      &::after
-        @apply content-[''] absolute w-48 h-48 -bottom-7 border-b border-gold
-      &::after
-        @apply -right-7 border-r
+    &--bottom
+      &-left
+        @extend %framed-core
+        &::before
+          @extend %framed-pseudo
+          @extend %framed-rg-size
+          @extend %framed-rg-edge-bottom
+          @extend %framed-rg-offset-left
+      &-right
+        @extend %framed-core
+        &::after
+          @extend %framed-pseudo
+          @extend %framed-rg-size
+          @extend %framed-rg-edge-bottom
+          @extend %framed-rg-offset-right
+    &--top
+      &-left
+        @extend %framed-core
+        &::before
+          @extend %framed-pseudo
+          @extend %framed-rg-size
+          @extend %framed-rg-edge-top
+          @extend %framed-rg-offset-left
+      &-right
+        @extend %framed-core
+        &::after
+          @extend %framed-pseudo
+          @extend %framed-rg-size
+          @extend %framed-rg-edge-top
+          @extend %framed-rg-offset-right

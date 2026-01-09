@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 xl:col-start-8">
-        <figure class="framed__regular-right w-full">
+        <figure class="framed__regular--bottom-right w-full">
           <?php
           $sb_id = get_field( 'seminare_bankette_image_2' );
           if ( $sb_id ) :

@@ -31,7 +31,7 @@
         <?php endif; ?>
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-12 mt-10">
-        <figure class="framed__fullwidth-left w-full">
+        <figure class="framed__fullwidth--bottom-left w-full">
           <?php
           $zs_id = get_field( 'zimmer_suiten_image' );
           if ( $zs_id ) :

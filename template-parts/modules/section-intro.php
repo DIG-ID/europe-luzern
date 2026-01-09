@@ -15,7 +15,7 @@
   <?php endif; ?>
   <div class="w-[1px] md:w-[690px] h-[1px] xl:h-[1px] bg-gold mb-5 mx-auto" aria-hidden="true"></div>
   <div class="intro-image px-14">
-    <figure class="framed__fullwidth-both w-full">
+    <figure class="framed__fullwidth--bottom-both w-full">
       <?php
       $intro_id = get_field( 'intro_image' );
       if ( $intro_id ) :
