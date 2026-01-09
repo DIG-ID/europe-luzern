@@ -1,4 +1,4 @@
-<div id="section-intro" class="section-intro xl:pt-0 xl:pb-36">
+<section id="section-intro" class="section-intro xl:pt-0 xl:pb-36">
   <?php if ( is_front_page() ) : ?>
   <div class="w-[1px] md:w-[1px] h-[56px] xl:h-[56px] bg-gold mx-auto" aria-hidden="true"></div>
   <?php endif; ?>
@@ -13,7 +13,7 @@
       ?>
     </figure>
   </div>
-  <div class="theme-container pt-16">
+  <div class="theme-container pt-11 md:pt-16">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
         <p class="overtitle text-dark-2 mb-4"><?php the_field( 'intro_overtitle' ); ?></p>
@@ -24,4 +24,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

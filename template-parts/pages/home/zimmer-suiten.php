@@ -1,4 +1,4 @@
-<div id="section-zimmer-suiten" class="section-zimmer-suiten pt-16 pb-20 md:pb-24 xl:pb-36 bg-cream">
+<section id="section-zimmer-suiten" class="section-zimmer-suiten pt-11 md:pt-16 pb-24 md:pb-32 xl:pb-40 bg-[linear-gradient(to_bottom,#F8F5F0_0%,#F8F5F0_60%,#FFFFFF_60%,#FFFFFF_100%)]">
   <div class="theme-container">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-4 xl:col-span-12">
@@ -31,4 +31,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>
