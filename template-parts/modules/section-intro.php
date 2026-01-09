@@ -13,9 +13,9 @@
   <?php if ( is_front_page() ) : ?>
   <div class="w-[1px] md:w-[1px] h-[56px] xl:h-[56px] bg-gold mx-auto" aria-hidden="true"></div>
   <?php endif; ?>
-  <div class="w-[1px] md:w-[690px] h-[1px] xl:h-[1px] bg-gold mb-5 mx-auto" aria-hidden="true"></div>
+  <div class="w-[1px] md:w-[690px] h-[1px] xl:h-[1px] bg-gold mb-[30.5px] mx-auto" aria-hidden="true"></div>
   <div class="intro-image px-14">
-    <figure class="framed__fullwidth--bottom-both w-full">
+    <figure class="framed__asymmetric--bottom-both w-full">
       <?php
       $intro_id = get_field( 'intro_image' );
       if ( $intro_id ) :

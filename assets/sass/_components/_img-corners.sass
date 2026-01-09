@@ -7,90 +7,90 @@
 %framed-pseudo
   @apply content-[''] absolute border-gold
 
-// FULLWIDTH container image
-%framed-fw-size
+// asymmetric sized lines
+%framed-asy-size
   @apply w-72 h-48
 
-%framed-fw-edge-bottom
-  @apply -bottom-5 border-b
+%framed-asy-edge-bottom
+  @apply -bottom-[30.5px] border-b
 
-%framed-fw-offset-left
-  @apply -left-5 border-l
+%framed-asy-offset-left
+  @apply -left-[30.5px] border-l
 
-%framed-fw-offset-right
-  @apply -right-5 border-r
+%framed-asy-offset-right
+  @apply -right-[30.5px] border-r
 
-// REGULAR sized image
-%framed-rg-size
+// symmetric sized lines
+%framed-sy-size
   @apply w-48 h-48
 
-%framed-rg-edge-bottom
-  @apply -bottom-7 border-b
+%framed-sy-edge-bottom
+  @apply -bottom-[30.5px] border-b
 
-%framed-rg-edge-top
-  @apply -top-7 border-t
+%framed-sy-edge-top
+  @apply -top-[30.5px] border-t
 
-%framed-rg-offset-left
-  @apply -left-7 border-l
+%framed-sy-offset-left
+  @apply -left-[30.5px] border-l
 
-%framed-rg-offset-right
-  @apply -right-7 border-r
+%framed-sy-offset-right
+  @apply -right-[30.5px] border-r
 
 .framed
-  &__fullwidth
+  &__asymmetric
     &--bottom
       &-both
         @extend %framed-core
         &::before, &::after
           @extend %framed-pseudo
-          @extend %framed-fw-size
-          @extend %framed-fw-edge-bottom
+          @extend %framed-asy-size
+          @extend %framed-asy-edge-bottom
         &::before
-          @extend %framed-fw-offset-left
+          @extend %framed-asy-offset-left
         &::after
-          @extend %framed-fw-offset-right
+          @extend %framed-asy-offset-right
       &-left
         @extend %framed-core
         &::before
           @extend %framed-pseudo
-          @extend %framed-fw-size
-          @extend %framed-fw-edge-bottom
-          @extend %framed-fw-offset-left
+          @extend %framed-asy-size
+          @extend %framed-asy-edge-bottom
+          @extend %framed-asy-offset-left
       &-right
         @extend %framed-core
         &::after
           @extend %framed-pseudo
-          @extend %framed-fw-size
-          @extend %framed-fw-edge-bottom
-          @extend %framed-fw-offset-right
-  &__regular
+          @extend %framed-asy-size
+          @extend %framed-asy-edge-bottom
+          @extend %framed-asy-offset-right
+  &__symmetric
     &--bottom
       &-left
         @extend %framed-core
         &::before
           @extend %framed-pseudo
-          @extend %framed-rg-size
-          @extend %framed-rg-edge-bottom
-          @extend %framed-rg-offset-left
+          @extend %framed-sy-size
+          @extend %framed-sy-edge-bottom
+          @extend %framed-sy-offset-left
       &-right
         @extend %framed-core
         &::after
           @extend %framed-pseudo
-          @extend %framed-rg-size
-          @extend %framed-rg-edge-bottom
-          @extend %framed-rg-offset-right
+          @extend %framed-sy-size
+          @extend %framed-sy-edge-bottom
+          @extend %framed-sy-offset-right
     &--top
       &-left
         @extend %framed-core
         &::before
           @extend %framed-pseudo
-          @extend %framed-rg-size
-          @extend %framed-rg-edge-top
-          @extend %framed-rg-offset-left
+          @extend %framed-sy-size
+          @extend %framed-sy-edge-top
+          @extend %framed-sy-offset-left
       &-right
         @extend %framed-core
         &::after
           @extend %framed-pseudo
-          @extend %framed-rg-size
-          @extend %framed-rg-edge-top
-          @extend %framed-rg-offset-right
+          @extend %framed-sy-size
+          @extend %framed-sy-edge-top
+          @extend %framed-sy-offset-right

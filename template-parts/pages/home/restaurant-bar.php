@@ -27,7 +27,7 @@
         <?php endif; ?>
     </div>
     <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 xl:col-start-8">
-      <figure class="framed__regular--top-right w-full">
+      <figure class="framed__symmetric--top-right w-full">
         <?php
         $rb_id = get_field( 'restaurant_bar_image' );
         if ( $rb_id ) :
