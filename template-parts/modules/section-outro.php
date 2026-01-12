@@ -58,7 +58,7 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
         endif; ?>
         </div>
       </div>
-      <div class="col-span-2 md:col-span-2 xl:col-span-3 flex flex-col items-center md:items-end justify-center md:justify-end xl:justify-center pr-0 md:pr-7 xl:pr-12">
+      <div class="col-span-2 md:col-span-2 xl:col-span-3 flex flex-col items-center md:items-end justify-center md:justify-end xl:justify-center pr-0 xl:pr-12">
         <?php 
         $booking_url = get_field('booking_button_url','option');
         if( $booking_url ): ?>
