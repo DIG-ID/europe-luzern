@@ -26,7 +26,7 @@
             <a class="btn btn-transparent max-w-56" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php endif; ?>
     </div>
-    <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 xl:col-start-8">
+    <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 xl:col-start-8 mt-12 md:mt-0">
       <figure class="framed__symmetric--top-right w-full">
         <?php
         $rb_id = get_field( 'restaurant_bar_image' );

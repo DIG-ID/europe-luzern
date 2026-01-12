@@ -1,4 +1,3 @@
-// Shared
 %framed-core
   @apply relative
   img
@@ -7,34 +6,59 @@
 %framed-pseudo
   @apply content-[''] absolute border-gold
 
+%framed-pos-bottom
+  @apply -bottom-4 md:-bottom-5 xl:-bottom-[30.5px]
+
+%framed-pos-top
+  @apply -top-4 md:-top-5 xl:-top-[30.5px]
+
+%framed-pos-left
+  @apply -left-4 md:-left-5 xl:-left-[30.5px]
+
+%framed-pos-right
+  @apply -right-4 md:-right-5 xl:-right-[30.5px]
+
 // asymmetric sized lines
 %framed-asy-size
-  @apply w-72 h-48
+  @apply w-14 h-16 md:w-28 md:h-20 xl:w-72 xl:h-48
 
 %framed-asy-edge-bottom
-  @apply -bottom-[30.5px] border-b
+  @extend %framed-pos-bottom
+  @apply border-b
+
+%framed-asy-edge-top
+  @extend %framed-pos-top
+  @apply border-t
 
 %framed-asy-offset-left
-  @apply -left-[30.5px] border-l
+  @extend %framed-pos-left
+  @apply border-l
 
 %framed-asy-offset-right
-  @apply -right-[30.5px] border-r
+  @extend %framed-pos-right
+  @apply border-r
+
 
 // symmetric sized lines
 %framed-sy-size
-  @apply w-48 h-48
+  @apply w-24 h-24 md:w-48 md:h-48
 
 %framed-sy-edge-bottom
-  @apply -bottom-[30.5px] border-b
+  @extend %framed-pos-bottom
+  @apply border-b
 
 %framed-sy-edge-top
-  @apply -top-[30.5px] border-t
+  @extend %framed-pos-top
+  @apply border-t
 
 %framed-sy-offset-left
-  @apply -left-[30.5px] border-l
+  @extend %framed-pos-left
+  @apply border-l
 
 %framed-sy-offset-right
-  @apply -right-[30.5px] border-r
+  @extend %framed-pos-right
+  @apply border-r
+
 
 .framed
   &__asymmetric
@@ -63,8 +87,43 @@
           @extend %framed-asy-size
           @extend %framed-asy-edge-bottom
           @extend %framed-asy-offset-right
+    &--top
+      &-both
+        @extend %framed-core
+        &::before, &::after
+          @extend %framed-pseudo
+          @extend %framed-asy-size
+          @extend %framed-asy-edge-top
+        &::before
+          @extend %framed-asy-offset-left
+        &::after
+          @extend %framed-asy-offset-right
+      &-left
+        @extend %framed-core
+        &::before
+          @extend %framed-pseudo
+          @extend %framed-asy-size
+          @extend %framed-asy-edge-top
+          @extend %framed-asy-offset-left
+      &-right
+        @extend %framed-core
+        &::after
+          @extend %framed-pseudo
+          @extend %framed-asy-size
+          @extend %framed-asy-edge-top
+          @extend %framed-asy-offset-right
   &__symmetric
     &--bottom
+      &-both
+        @extend %framed-core
+        &::before, &::after
+          @extend %framed-pseudo
+          @extend %framed-sy-size
+          @extend %framed-sy-edge-bottom
+        &::before
+          @extend %framed-sy-offset-left
+        &::after
+          @extend %framed-sy-offset-right
       &-left
         @extend %framed-core
         &::before
@@ -80,6 +139,16 @@
           @extend %framed-sy-edge-bottom
           @extend %framed-sy-offset-right
     &--top
+      &-both
+        @extend %framed-core
+        &::before, &::after
+          @extend %framed-pseudo
+          @extend %framed-sy-size
+          @extend %framed-sy-edge-top
+        &::before
+          @extend %framed-sy-offset-left
+        &::after
+          @extend %framed-sy-offset-right
       &-left
         @extend %framed-core
         &::before
