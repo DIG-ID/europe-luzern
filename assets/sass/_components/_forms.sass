@@ -1,0 +1,75 @@
+.wpcf7
+  ::placeholder 
+    @apply font-barlow text-dark text-sm font-normal tracking-[0.03125rem] leading-[1.5rem]
+
+  table 
+    @apply w-full
+
+  .wpcf7-form-control-wrap
+    @apply block mb-4 md:mb-6 relative
+
+  .row-divided
+    @apply flex flex-col md:flex-row xl:pl-[102px] xl:pr-[102px] md:w-full md:gap-x-5 xl:gap-x-7
+
+    .half-width
+      @apply w-full flex justify-center md:block
+
+  .full-width
+    @apply flex justify-center md:block xl:pl-[102px] xl:pr-[102px] md:w-full
+
+  input[type=text],
+  input[type=email],
+  input[type=tel]
+    @apply w-full h-[3.5rem] bg-white
+
+  textarea
+    @apply w-full bg-white max-h-44 pt-4 pb-4
+
+  .grand-hotel-europe-form-field__submit
+    @apply w-full flex justify-center
+
+  .grand-hotel-europe-form-field__submit .wpcf7-submit
+    width: 220px
+    display: block
+    
+  .button-wrapper
+    @apply w-[220px] flex justify-self-center
+
+    input[type=submit]
+      @apply w-full flex items-center justify-center px-[1.6rem] py-[1.19rem] text-dark text-sm font-semibold uppercase font-barlow rounded-[5px]
+
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  textarea
+    @apply font-barlow text-dark text-sm font-normal tracking-[0.03125rem] leading-[1.5rem] pl-9 pr-9 rounded-[5px]
+
+  .wpcf7-spinner
+    @apply bg-dark absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5
+
+  .wpcf7-not-valid-tip
+    @apply text-xs text-red-600 font-barlow font-normal tracking-[0.14px] min-h-[20px] pt-1 relative xl:absolute
+
+  label
+    @apply block font-barlow text-sm font-normal leading-[2rem] tracking-[0.03125rem]
+
+  .form-title
+    @apply font-barlow text-sm font-normal tracking-[-0.02969rem] leading-[2.34375rem] mb-[1.87rem] text-left w-full mx-auto md:mx-0
+
+  form
+    .wpcf7-response-output
+      @apply  text-sm font-barlow font-normal tracking-[0.14px] rounded-[10px] mt-6
+    &.sent
+      .wpcf7-response-output
+        @apply text-dark bg-white border-dark
+    &.failed,
+    &.aborted
+      .wpcf7-response-output
+        @apply border-red-400 bg-red-400
+    &.spam
+      .wpcf7-response-output
+        @apply border-orange-400 bg-orange-400
+    &.invalid,
+    &.unaccepted
+      .wpcf7-response-output 
+        @apply bg-white border-gold

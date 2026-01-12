@@ -13,7 +13,7 @@ if ( have_posts() ) :
 	while ( have_posts() ) :
 		the_post();
 		do_action( 'before_main_content' );
-			get_template_part( 'template-parts/pages/gruppen/hero' );
+			get_template_part( 'template-parts/modules/hero' );
             get_template_part( 'template-parts/pages/gruppen/offers' );
             get_template_part( 'template-parts/pages/gruppen/your-stay' );
             get_template_part( 'template-parts/pages/gruppen/form' );
