@@ -139,6 +139,9 @@ add_action('wp', function () {
   }
 });
 
+// Custom Breadcrumbs for the Zimmer & Suiten
+require get_template_directory() . '/inc/theme-custom-breadcrumbs.php';
+
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
 
@@ -154,3 +157,4 @@ function my_console_log(...$data) {
 		 echo "<script>console.log({$json})</script>";
 	});
 }
+
