@@ -7,6 +7,22 @@
  * @since 1.0.0
  */
 
+$options_prefix = get_query_var('options_prefix');
+
+function theme_resolve_field(string $base_key, ?string $options_prefix = null) {
+  $value = get_field($base_key);
+
+  if (empty($value) && $options_prefix) {
+    $value = get_field($options_prefix . '_' . $base_key, 'option');
+  }
+
+  return $value;
+}
+
+$intro_id      = theme_resolve_field('intro_image', $options_prefix);
+$intro_over    = theme_resolve_field('intro_overtitle', $options_prefix);
+$intro_title   = theme_resolve_field('intro_title', $options_prefix);
+$intro_text    = theme_resolve_field('intro_text', $options_prefix);
 ?>
 
 <section id="section-intro" class="section-intro xl:pt-0 pb-20 md:pb-24 xl:pb-36">
@@ -17,7 +33,6 @@
   <div class="intro-image px-6 md:px-14">
     <figure class="framed__asymmetric--bottom-both w-full">
       <?php
-      $intro_id = get_field( 'intro_image' );
       if ( $intro_id ) :
         echo wp_get_attachment_image( $intro_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
       endif;
@@ -27,11 +42,11 @@
   <div class="theme-container pt-11 md:pt-16">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
-        <p class="overtitle text-dark-2 mb-4"><?php the_field( 'intro_overtitle' ); ?></p>
-        <h2 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php the_field( 'intro_title' ); ?></h2>
+        <p class="overtitle text-dark-2 mb-4"><?php echo $intro_over; ?></p>
+        <h2 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php echo $intro_title; ?></h2>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
-        <p class="text-dark-2"><?php the_field( 'intro_text' ); ?></p>
+        <p class="text-dark-2"><?php echo $intro_text; ?></p>
       </div>
     </div>
   </div>

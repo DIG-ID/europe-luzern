@@ -9,6 +9,10 @@
 
 get_header();
 	do_action( 'before_main_content' );
-		get_template_part( 'template-parts/archives/zimmer-suiten/hero' );
+			set_query_var('hero_options_prefix', 'zimmer');
+			set_query_var('options_prefix', 'zimmer');
+			get_template_part( 'template-parts/modules/hero' );
+			get_template_part( 'template-parts/modules/section-intro' );
+			get_template_part( 'template-parts/modules/section-outro' );
 	do_action( 'after_main_content' );
 get_footer();
