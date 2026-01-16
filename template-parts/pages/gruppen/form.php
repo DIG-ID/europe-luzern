@@ -15,7 +15,7 @@
                 <h2 class="title-secondary text-darker pt-5 "><?php the_field('form_title'); ?></h2>
             </div>
             <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12 pt-12 md:pt-10 xl:pt-16">
-                <?php echo do_shortcode('[contact-form-7 id="fe055a1" title="Gruppen Form"]'); ?>
+                <?php echo do_shortcode('[contact-form-7 id="28d5486" title="contact form gruppen"]'); ?>
             </div>
         </div>
     </div>
