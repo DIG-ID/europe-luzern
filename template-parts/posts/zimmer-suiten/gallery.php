@@ -2,7 +2,7 @@
 $gallery_ids = get_field('gallery_images');
 if ($gallery_ids && is_array($gallery_ids)) :
 ?>
-  <div class="gallery-images-swiper-col relative col-span-2 md:col-span-6 xl:col-span-10 xl:col-start-2">
+  <div class="gallery-images-swiper-col relative col-span-2 md:col-span-6 xl:col-span-12">
 
     <!-- Main slider -->
     <div class="swiper gallery-images-swiper">
@@ -22,14 +22,14 @@ if ($gallery_ids && is_array($gallery_ids)) :
   </div>
 
   <!-- Nav arrows -->
-  <div class="zimmer-suiten-nav-arrows col-span-2 md:col-span-6 xl:col-span-12 absolute w-full top-1/2 left-0 -translate-y-1/2">
-    <button type="button" class="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center">
+  <div class="zimmer-suiten-nav-arrows col-span-2 md:col-span-6 xl:col-span-12 absolute w-full top-1/2 left-0 -translate-y-1/2 z-10">
+    <button type="button" class="swiper-button-prev absolute left-10 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
         <rect x="32.25" y="32.25" width="31.5" height="31.5" transform="rotate(-180 32.25 32.25)" stroke="#A7986E" stroke-width="1.5"/>
         <path d="M21 26L12 16.5L21 7" stroke="#A7986E" stroke-width="1.5"/>
       </svg>
     </button>
-    <button type="button" class="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center">
+    <button type="button" class="swiper-button-next absolute right-10 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
         <rect x="0.75" y="0.75" width="31.5" height="31.5" stroke="#A7986E" stroke-width="1.5"/>
         <path d="M12 7L21 16.5L12 26" stroke="#A7986E" stroke-width="1.5"/>
@@ -39,7 +39,7 @@ if ($gallery_ids && is_array($gallery_ids)) :
 
   <!-- Thumbs -->
   <div class="gallery-images-swiper-col relative col-span-2 md:col-span-6 xl:col-span-12">
-    <div class="swiper gallery-thumbs-swiper mt-6">
+    <div class="swiper gallery-thumbs-swiper mt-4">
       <div class="swiper-wrapper">
         <?php foreach ($gallery_ids as $img_id) :
           $thumb_url = wp_get_attachment_image_url($img_id, 'thumbnail');
