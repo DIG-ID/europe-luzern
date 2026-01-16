@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Gruppen Template
+ * Template Name: Das Hotel Template
  *
  * @package website-name
  * @subpackage Template
@@ -14,9 +14,10 @@ if ( have_posts() ) :
 		the_post();
 		do_action( 'before_main_content' );
 			get_template_part( 'template-parts/modules/section-hero' );
-            get_template_part( 'template-parts/pages/gruppen/offers' );
-            get_template_part( 'template-parts/pages/gruppen/your-stay' );
-            get_template_part( 'template-parts/pages/gruppen/form' );
+            get_template_part( 'template-parts/modules/section-intro' );
+            get_template_part( 'template-parts/pages/hotel/philosophy' );
+            get_template_part( 'template-parts/pages/hotel/history' );
+            get_template_part( 'template-parts/pages/hotel/testimonials' );
             get_template_part( 'template-parts/modules/section-outro' );
 		do_action( 'after_main_content' );
 	endwhile;

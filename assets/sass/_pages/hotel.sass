@@ -1,0 +1,52 @@
+#testimonials-section
+  .testimonials-swiper
+    overflow: hidden
+    width: 100%
+    max-width: 100%
+
+  // Swiper MUST be flex here. If anything overrides it (grid, block), the slider breaks.
+  .testimonials-swiper
+    .swiper-wrapper
+      display: flex !important
+      align-items: stretch
+
+    .swiper-slide
+      flex: 0 0 auto !important
+      height: auto
+
+      > *
+        width: 100%
+        height: 100%
+
+    #testimonials-section
+  .testimonials-controls
+    margin-top: 30px
+    display: flex
+    justify-content: center
+    gap: 26px
+
+  // remove Swiper default arrow pseudo-elements
+  .swiper-button-prev:after,
+  .swiper-button-next:after
+    display: none
+
+  .swiper-button-prev,
+  .swiper-button-next
+    position: static
+    width: 33px
+    height: 33px
+    margin: 0
+    color: #000 
+    opacity: 1
+
+    svg
+        width: 100%
+        height: 100%
+        display: block
+
+    &:hover
+      opacity: .7
+
+    &.swiper-button-disabled
+      opacity: .3
+      pointer-events: none

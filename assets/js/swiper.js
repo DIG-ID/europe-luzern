@@ -1,4 +1,7 @@
 import Swiper from 'swiper/bundle';
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 window.addEventListener("load", () => {
   if (document.querySelector(".single-zimmer") || document.querySelector(".single-suiten")) {
@@ -23,4 +26,30 @@ window.addEventListener("load", () => {
       },
     });
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector("#testimonials-section .testimonials-swiper");
+  if (!el) return;
+
+  new Swiper(el, {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    grabCursor: true,
+
+    breakpoints: {
+        768: {
+        slidesPerView: 1.5,
+        },
+        1280: {
+        slidesPerView: 2.2,
+        spaceBetween: 28,
+        },
+    },
+    navigation: {
+    nextEl: "#testimonials-section .testimonials-next",
+    prevEl: "#testimonials-section .testimonials-prev",
+  },
+  });
 });
