@@ -9,10 +9,10 @@
             $image_order   = $is_even ? 'xl:order-2' : 'xl:order-1';
             $content_order = $is_even ? 'xl:order-1' : 'xl:order-2';
             $section_padding = $is_even ? 'pl-0 pr-0' : 'pl-0 pr-6';
-            $border_side = $is_even ? 'suiten-border--right' : 'suiten-border--left';
+            $border_side = $is_even ? 'zimmer-suiten-border--right' : 'zimmer-suiten-border--left';
           ?>
           <article class="col-span-2 md:col-span-6 xl:col-span-12">
-            <div class="relative suiten-border <?php echo esc_attr($border_side); ?> pt-0 pb-32 <?php echo esc_attr($section_padding); ?>">
+            <div class="relative zimmer-suiten-border <?php echo esc_attr($border_side); ?> pt-0 pb-32 <?php echo esc_attr($section_padding); ?>">
               <div class="theme-grid items-start">
                 <div class="col-span-2 md:col-span-6 xl:col-span-7 <?php echo esc_attr($image_order); ?>">
                   <a href="<?php the_permalink(); ?>" class="block">
