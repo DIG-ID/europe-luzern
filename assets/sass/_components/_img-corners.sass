@@ -169,3 +169,41 @@
           @extend %framed-sy-size
           @extend %framed-sy-edge-top
           @extend %framed-sy-offset-right
+
+
+/*ZIMMER & SUITEN SECTION BORDERS*/
+.zimmer-border
+  --zimmer-border-color: #A7986E
+  --zimmer-border-gap: -30.5px
+  --zimmer-border-side: 195px
+
+  position: relative
+
+/* draw the full-width top border */
+.zimmer-border::before
+  content: ""
+  position: absolute
+  left: -30.5px
+  right: -30.5px
+  top: var(--zimmer-border-gap)
+
+  height: 1px
+  background: var(--zimmer-border-color)
+  pointer-events: none
+
+/* draw the short side border */
+.zimmer-border::after
+  content: ""
+  position: absolute
+  top: var(--zimmer-border-gap)
+  width: 1px
+  height: var(--zimmer-border-side)
+  background: var(--zimmer-border-color)
+  pointer-events: none
+
+/* side selection */
+.zimmer-border--left::after
+  left: -30.5px
+
+.zimmer-border--right::after
+  right: -30.5px

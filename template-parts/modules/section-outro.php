@@ -7,12 +7,25 @@
  * @since 1.0.0
  */
 
+$outro_options_prefix = get_query_var('outro_options_prefix');
+
+function theme_resolve_outro_field(string $base_key, ?string $outro_options_prefix = null) {
+  $value = get_field($base_key);
+
+  if (empty($value) && $outro_options_prefix) {
+    $value = get_field($outro_options_prefix . '_' . $base_key, 'option');
+  }
+
+  return $value;
+}
+
+$outro_section_type = theme_resolve_outro_field('outro_section_type', $outro_options_prefix);
 
 $bg_outro_id  = get_field('outro_image');
 $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full') : '';
 ?>
 
-<?php if ( 'full' === get_field( 'outro_section_type' ) ) : ?>
+<?php if ( 'full' === $outro_section_type ) : ?>
 <section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat" style="<?php echo $bg_outro_url ? 'background-image: linear-gradient(to bottom, rgba(34,34,34,0) 0%, rgba(34,34,34,0) 77%, rgba(34,34,34,1) 77%, rgba(34,34,34,1) 100%), url(' . esc_url($bg_outro_url) . ');' : 'background-color:#222222;'; ?>">
   <div class="absolute inset-0 bg-[rgba(34,34,34,0.75)] pointer-events-none z-0" aria-hidden="true"></div>
   <div class="theme-container pt-9 pb-24 md:py-28 xl:pb-24 xl:pt-20 relative z-10">
@@ -39,7 +52,7 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
   </div>
 <?php endif; ?>
 
-<?php if ( 'simple' === get_field( 'outro_section_type' ) ) : ?>
+<?php if ( 'simple' === $outro_section_type ) : ?>
 <section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat">
 <?php endif; ?>
   

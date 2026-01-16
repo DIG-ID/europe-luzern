@@ -9,11 +9,11 @@
 
 $hero_options_prefix = get_query_var('hero_options_prefix');
 
-function theme_resolve_hero_field(string $base_key, ?string $options_prefix = null) {
+function theme_resolve_hero_field(string $base_key, ?string $hero_options_prefix = null) {
   $value = get_field($base_key);
 
-  if (empty($value) && $options_prefix) {
-    $value = get_field($options_prefix . '_' . $base_key, 'option');
+  if (empty($value) && $hero_options_prefix) {
+    $value = get_field($hero_options_prefix . '_' . $base_key, 'option');
   }
 
   return $value;
@@ -21,6 +21,12 @@ function theme_resolve_hero_field(string $base_key, ?string $options_prefix = nu
 
 $rb_id  = theme_resolve_hero_field('hero_background_image', $hero_options_prefix);
 $title  = theme_resolve_hero_field('hero_title', $hero_options_prefix);
+/*Different titles for suitens and zimmer*/
+if ( is_post_type_archive('suiten') ) {
+  $title = esc_html__( 'Suiten', 'grand-hotel-europe' );
+} elseif ( is_post_type_archive('zimmer') ) {
+  $title = esc_html__( 'Zimmer', 'grand-hotel-europe' );
+}
 ?>
 
 <section id="hero" class="hero-section relative overflow-hidden pt-72 pb-72 md:pt-96 md:pb-96 xl:pt-[22.13rem] xl:pb-48 text-center">
@@ -36,9 +42,9 @@ $title  = theme_resolve_hero_field('hero_title', $hero_options_prefix);
 
   <div class="theme-container relative z-10">
     <h1 class="title-main pb-5 xl:pb-6 text-white"><?php echo $title; ?></h1>
-        <div class="breadcrumbs text-white">
-            <?php theme_breadcrumbs(); ?>
-        </div>
+    <div class="breadcrumbs text-white">
+        <?php theme_breadcrumbs(); ?>
+    </div>
   </div>
 
 </section>

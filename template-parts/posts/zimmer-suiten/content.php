@@ -47,8 +47,8 @@
             </div>
             <div class="list-bottom-wrapper">
             <?php
-            if( have_rows('facilities_list_top') ):
-                while( have_rows('facilities_list_top') ) : the_row();
+            if( have_rows('facilities_list_bottom') ):
+                while( have_rows('facilities_list_bottom') ) : the_row();
                 ?>
                 <p class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></p>
                 <?php
