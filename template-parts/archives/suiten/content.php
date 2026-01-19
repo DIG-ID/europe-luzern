@@ -8,24 +8,24 @@
             $is_even = ($i % 2 === 0);
             $image_order   = $is_even ? 'xl:order-2' : 'xl:order-1';
             $content_order = $is_even ? 'xl:order-1' : 'xl:order-2';
-            $section_padding = $is_even ? 'pl-0 pr-0' : 'pl-0 pr-6';
+            $section_padding = $is_even ? 'pl-0 pr-0' : 'pl-0 pr-0 xl:pr-6';
             $border_side = $is_even ? 'zimmer-suiten-border--right' : 'zimmer-suiten-border--left';
           ?>
           <article class="col-span-2 md:col-span-6 xl:col-span-12">
-            <div class="relative zimmer-suiten-border <?php echo esc_attr($border_side); ?> pt-0 pb-32 <?php echo esc_attr($section_padding); ?>">
+            <div class="relative zimmer-suiten-border <?php echo esc_attr($border_side); ?> pt-0 pb-14 md:pb-24 xl:pb-32 <?php echo esc_attr($section_padding); ?>">
               <div class="theme-grid items-start">
-                <div class="col-span-2 md:col-span-6 xl:col-span-7 <?php echo esc_attr($image_order); ?>">
+                <div class="col-span-2 md:col-span-3 xl:col-span-7 h-auto md:h-full xl:h-auto <?php echo esc_attr($image_order); ?>">
                   <a href="<?php the_permalink(); ?>" class="block">
                     <?php if ( has_post_thumbnail() ) : ?>
-                      <?php the_post_thumbnail('large', [ 'class' => 'w-full h-auto object-cover' ]); ?>
+                      <?php the_post_thumbnail('full', [ 'class' => 'w-full h-auto md:h-full xl:h-auto max-h-[400px] md:max-h-[450px] xl:max-h-[458px] min-h-[400px] md:min-h-[450px] xl:min-h-[458px] object-cover md:object-center xl:object-cover' ]); ?>
                     <?php endif; ?>
                   </a>
                 </div>
-                <div class="col-span-2 md:col-span-6 xl:col-span-5 <?php echo esc_attr($content_order); ?>">
+                <div class="col-span-2 md:col-span-3 xl:col-span-5 pt-8 md:pt-0 <?php echo esc_attr($content_order); ?>">
                   <h2 class="text-dark-1">
                     <a href="<?php the_permalink(); ?>" class="title-secondary text-dark-2"><?php the_title(); ?></a>
                   </h2>
-                  <div class="pt-6 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
+                  <div class="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-x-5 gap-y-2">
                     <?php if ( have_rows('facilities_list_top') ) : ?>
                       <?php while ( have_rows('facilities_list_top') ) : the_row(); ?>
                         <div class="flex items-center justify-start gap-3">

@@ -179,7 +179,6 @@
   position: relative
 
 .zimmer-suiten-border::before
-  @apply -left-4 md:-left-5 xl:-left-[30.5px] -right-4 md:-right-5 xl:-right-[30.5px] -top-4 md:-top-5 xl:-top-[30.5px]
   content: ""
   position: absolute
   height: 1px
@@ -194,6 +193,12 @@
   height: var(--zimmer-border-side)
   background: var(--zimmer-border-color)
   pointer-events: none
+
+.zimmer-suiten-border--left::before
+  @apply -left-4 md:-left-5 xl:-left-[30.5px] right-0 -top-4 md:-top-5 xl:-top-[30.5px]
+  
+.zimmer-suiten-border--right::before
+  @apply left-0 -right-4 md:-right-5 xl:-right-[30.5px] -top-4 md:-top-5 xl:-top-[30.5px]
 
 .zimmer-suiten-border--left::after
   @apply -left-4 md:-left-5 xl:-left-[30.5px]
