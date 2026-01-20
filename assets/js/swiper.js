@@ -26,9 +26,8 @@ window.addEventListener("load", () => {
       },
     });
   }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+  
+  if (document.querySelector(".page-template-page-hotel")) {
   const el = document.querySelector("#testimonials-section .testimonials-swiper");
   if (!el) return;
 
@@ -51,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     nextEl: "#testimonials-section .testimonials-next",
     prevEl: "#testimonials-section .testimonials-prev",
   },
-  });
-});
-function initRegionSliders() {
+  })
+};
+
+  if (document.querySelector(".page-template-page-region")) {
   const activitiesEl = document.querySelector(".activities-swiper");
   if (activitiesEl) {
     new Swiper(activitiesEl, {
@@ -82,5 +82,4 @@ function initRegionSliders() {
     });
   }
 }
-
-document.addEventListener("DOMContentLoaded", initRegionSliders);
+});
