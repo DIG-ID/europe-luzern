@@ -16,6 +16,4 @@ get_header();
 	do_action( 'after_main_content' );
 get_footer();
 
-
 ?>
-

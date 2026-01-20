@@ -26,6 +26,29 @@ window.addEventListener("load", () => {
       },
     });
   }
+
+  if (document.querySelector(".single-bankette") || document.querySelector(".single-seminar")) {
+
+    const thumbs = new Swiper('.gallery-thumbs-swiper-bs', {
+      slidesPerView: 'auto',
+      spaceBetween: 14,
+      watchSlidesProgress: true,
+    });
+
+    new Swiper('.gallery-images-swiper-bs', {
+      slidesPerView: 1,
+      loop: true,
+      speed: 900,
+      effect: 'slide',
+      navigation: {
+        nextEl: '.bankette-seminar-nav-arrows .swiper-button-next',
+        prevEl: '.bankette-seminar-nav-arrows .swiper-button-prev',
+      },
+      thumbs: {
+        swiper: thumbs,
+      },
+    });
+  }
   
   if (document.querySelector(".page-template-page-hotel")) {
   const el = document.querySelector("#testimonials-section .testimonials-swiper");
