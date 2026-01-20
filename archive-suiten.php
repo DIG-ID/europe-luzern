@@ -10,7 +10,7 @@
 get_header();
 	do_action( 'before_main_content' );
 			set_query_var('hero_options_prefix', 'suiten');
-			get_template_part( 'template-parts/modules/hero' );
+			get_template_part( 'template-parts/modules/section-hero' );
 			set_query_var('options_prefix', 'suiten');
 			get_template_part( 'template-parts/modules/section-intro' );
 			get_template_part( 'template-parts/archives/suiten/content' );
