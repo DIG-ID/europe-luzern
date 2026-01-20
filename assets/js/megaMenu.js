@@ -57,8 +57,6 @@ export function initMegaMenu({ lenis } = {}) {
 
   setInert(mega, true);
 
-
-
   const tl = gsap.timeline({
     paused: true,
     defaults: { ease: "power3.out", duration: 0.75 },
