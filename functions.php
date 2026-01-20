@@ -8,7 +8,8 @@ function ghe_theme_setup() {
 		array(
 			'main-menu'      => __( 'Main Menu', 'grand-hotel-europe' ),
 			'mega-menu'      => __( 'Mega Menu', 'grand-hotel-europe' ),
-			'secondary-menu' => __( 'Secondary Menu', 'grand-hotel-europe' ),
+			'footer-menu-1'   => __( 'Footer Menu 1', 'grand-hotel-europe' ),
+			'footer-menu-2'   => __( 'Footer Menu 2', 'grand-hotel-europe' ),
 			'copyright-menu' => __( 'Copyright Menu', 'grand-hotel-europe' ),
 		)
 	);

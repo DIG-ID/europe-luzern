@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="copyright">
-			copyright
+			&copy; <?php echo date( 'Y' ); ?> <?php esc_html_e( 'Alle Rechte vorbehalten.', 'grand-hotel-europe' ); ?>
 		</div>
 
 	</div>
