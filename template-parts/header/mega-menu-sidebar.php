@@ -1,17 +1,17 @@
 <div class="panel-right-wrapper text-cream font-barlow">
 
-	<div class="site-branding mb-12 2xl:mb-16">
+	<div class="site-branding mb-12 [@media(max-height:900px)]:mb-10 2xl:mb-16">
 		<?php do_action( 'theme_logo' ); ?>
 	</div>
 
-	<div class="flex flex-col gap-y-7 2xl:gap-y-9">
+	<div class="flex flex-col gap-y-7 [@media(max-height:900px)]:gap-y-6 2xl:gap-y-9">
 
-		<div class="address flex flex-col gap-y-4 2xl:gap-y-6">
+		<div class="address flex flex-col gap-y-4 [@media(max-height:900px)]:gap-y-2 2xl:gap-y-6">
 			<h3 class="overtitle"><?php esc_html_e( 'Adresse', 'grand-hotel-europe' ); ?></h3>
 			<p><?php the_field( 'address', 'options' ); ?></p>
 		</div>
 
-		<div class="contact flex flex-col gap-y-4 2xl:gap-y-6">
+		<div class="contact flex flex-col gap-y-4 [@media(max-height:900px)]:gap-y-2 2xl:gap-y-6">
 			<h3 class="overtitle"><?php esc_html_e( 'Kontakt', 'grand-hotel-europe' ); ?></h3>
 			<div class="phone flex flex-col">
 				<a class="translate-x-0 transition-all duration-500 ease-in-out hover:text-gold hover:translate-x-1" href="tel:<?php the_field( 'contacts_telephone', 'options' ); ?>"><?php esc_html_e( 'Tel: ', 'grand-hotel-europe' ); ?><?php the_field( 'contacts_telephone', 'options' ); ?></a>
