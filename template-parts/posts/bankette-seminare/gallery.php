@@ -1,6 +1,6 @@
 <?php
 /**
- * Gallery Section in the Bankette and Seminar Single Posts Template.
+ * Gallery Section in the Bankette and seminare Single Posts Template.
  *
  * @package grand-hotel-europe
  * @subpackage Section
@@ -19,7 +19,7 @@ if ($gallery_ids && is_array($gallery_ids)) :
     <div class="swiper gallery-images-swiper-bs">
       <div class="swiper-wrapper">
         <?php foreach ($gallery_ids as $img_id) :
-          $img_url = wp_get_attachment_image_url($img_id, 'bankette-seminar-gallery');
+          $img_url = wp_get_attachment_image_url($img_id, 'bankette-seminare-gallery');
           $img_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
           if (!$img_alt) $img_alt = get_the_title($img_id);
           if (!$img_url) continue;
@@ -33,7 +33,7 @@ if ($gallery_ids && is_array($gallery_ids)) :
   </div>
 
   <!-- Nav arrows -->
-  <div class="bankette-seminar-nav-arrows col-span-2 md:col-span-6 xl:col-span-12 absolute w-full top-1/2 left-0 -translate-y-1/2 z-10">
+  <div class="bankette-seminare-nav-arrows col-span-2 md:col-span-6 xl:col-span-12 absolute w-full top-1/2 left-0 -translate-y-1/2 z-10">
     <button type="button" class="swiper-button-prev absolute left-10 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
         <rect x="32.25" y="32.25" width="31.5" height="31.5" transform="rotate(-180 32.25 32.25)" stroke="#A7986E" stroke-width="1.5"/>

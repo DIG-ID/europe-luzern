@@ -172,36 +172,36 @@
 
 
 /*ZIMMER & SUITEN SECTION BORDERS*/
-.zimmer-suiten-border
-  --zimmer-border-color: #A7986E
-  --zimmer-border-side: 195px
+.zimmer-suiten-border, .bankette-seminare-border
+  --full-border-color: #A7986E
+  --full-border-side: 195px
 
   position: relative
 
-.zimmer-suiten-border::before
+.zimmer-suiten-border::before, .bankette-seminare-border::before
   content: ""
   position: absolute
   height: 1px
-  background: var(--zimmer-border-color)
+  background: var(--full-border-color)
   pointer-events: none
 
-.zimmer-suiten-border::after
+.zimmer-suiten-border::after, .bankette-seminare-border::after
   @apply -top-4 md:-top-5 xl:-top-[30.5px]
   content: ""
   position: absolute
   width: 1px
-  height: var(--zimmer-border-side)
-  background: var(--zimmer-border-color)
+  height: var(--full-border-side)
+  background: var(--full-border-color)
   pointer-events: none
 
-.zimmer-suiten-border--left::before
+.zimmer-suiten-border--left::before, .bankette-seminare-border--left::before
   @apply -left-4 md:-left-5 xl:-left-[30.5px] right-0 -top-4 md:-top-5 xl:-top-[30.5px]
   
-.zimmer-suiten-border--right::before
+.zimmer-suiten-border--right::before, .bankette-seminare-border--right::before
   @apply left-0 -right-4 md:-right-5 xl:-right-[30.5px] -top-4 md:-top-5 xl:-top-[30.5px]
 
-.zimmer-suiten-border--left::after
+.zimmer-suiten-border--left::after, .bankette-seminare-border--left::after
   @apply -left-4 md:-left-5 xl:-left-[30.5px]
 
-.zimmer-suiten-border--right::after
+.zimmer-suiten-border--right::after, .bankette-seminare-border--right::after
   @apply -right-4 md:-right-5 xl:-right-[30.5px]
