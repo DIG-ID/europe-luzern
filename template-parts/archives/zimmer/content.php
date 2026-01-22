@@ -9,14 +9,20 @@
  * @since 1.0.0
  */
 
+$general_query = new WP_Query([
+  'post_type'      => 'zimmer',
+  'post_status'    => 'publish',
+  'posts_per_page' => -1,
+  'orderby'        => 'menu_order',
+  'order'          => 'ASC',
+]);
 ?>
-
 <section id="zimmer-overview" class="zimmer-overview">
   <div class="theme-container">
     <div class="theme-grid">
-      <?php if ( have_posts() ) : ?>
+      <?php if ( $general_query->have_posts() ) : ?>
         <?php $i = 0; ?>
-        <?php while ( have_posts() ) : the_post(); $i++; ?>
+        <?php while ( $general_query->have_posts() ) : $general_query->the_post(); $i++; ?>
           <?php
             $is_even = ($i % 2 === 0);
             $image_order   = $is_even ? 'xl:order-2' : 'xl:order-1';
@@ -64,6 +70,7 @@
             </div>
           </article>
         <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
       <?php else : ?>
         <div class="col-span-2 md:col-span-6 xl:col-span-12">
           <p><?php esc_html_e( 'Keine Zimmer gefunden.', 'grand-hotel-europe' ) ?></p>
