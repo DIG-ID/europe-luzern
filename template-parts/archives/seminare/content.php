@@ -42,12 +42,28 @@
   </div>
 </section>
 
+<?php
+$general_query = new WP_Query([
+  'post_type'      => 'seminare',
+  'post_status'    => 'publish',
+  'posts_per_page' => -1,
+  'orderby'        => 'menu_order',
+  'order'          => 'ASC',
+  'tax_query'      => [
+    [
+      'taxonomy' => 'category',
+      'field'    => 'slug',
+      'terms'    => ['general'],
+    ],
+  ],
+]);
+?>
 <section id="seminare-overview" class="seminare-overview">
   <div class="theme-container">
     <div class="theme-grid">
-      <?php if ( have_posts() ) : ?>
+      <?php if ( $general_query->have_posts() ) : ?>
         <?php $i = 0; ?>
-        <?php while ( have_posts() ) : the_post(); $i++; ?>
+        <?php while ( $general_query->have_posts() ) : $general_query->the_post(); $i++; ?>
           <?php
             $is_even = ($i % 2 === 0);
             $image_order   = $is_even ? 'xl:order-2' : 'xl:order-1';
@@ -95,6 +111,7 @@
             </div>
           </article>
         <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
       <?php else : ?>
         <div class="col-span-2 md:col-span-6 xl:col-span-12">
           <p><?php esc_html_e( 'Keine seminare gefunden.', 'grand-hotel-europe' ) ?></p>
@@ -105,16 +122,19 @@
 </section>
 
 <?php
-// Reset after the main archive loop (important!)
-wp_reset_postdata();
-
-// BANKETTE QUERY
 $bankette_query = new WP_Query([
-  'post_type'      => 'bankette',
+  'post_type'      => 'seminare',
   'post_status'    => 'publish',
   'posts_per_page' => 3,
   'orderby'        => 'menu_order',
   'order'          => 'ASC',
+  'tax_query'      => [
+    [
+      'taxonomy' => 'category',
+      'field'    => 'slug',
+      'terms'    => ['bankette'],
+    ],
+  ],
 ]);
 ?>
 
@@ -189,7 +209,7 @@ $bankette_query = new WP_Query([
 
         <?php endwhile; ?>
 
-        <?php wp_reset_postdata(); // reset after custom query ?>
+        <?php wp_reset_postdata(); ?>
 
       <?php else : ?>
         <div class="col-span-2 md:col-span-6 xl:col-span-12">
@@ -200,7 +220,6 @@ $bankette_query = new WP_Query([
     </div>
   </div>
 </section>
-
 
 <section id="post-content" class="post-content bg-cream py-5 md:py-14 xl:py-28">
   <div class="theme-container">
