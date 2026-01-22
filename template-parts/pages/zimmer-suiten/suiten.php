@@ -1,7 +1,7 @@
 <section id="section-suiten" class="section-suiten relative overflow-hidden pt-10 pb-36">
-    <div class="theme-container bg-[linear-gradient(to_bottom,#FFFFFF_0%,#FFFFFF_75%,#F8F5F0_75%,#F8F5F0_100%)] md:bg-[linear-gradient(to_bottom,#FFFFFF_0%,#FFFFFF_30%,#F8F5F0_30%,#F8F5F0_100%)]">
+    <div class="theme-container bg-[linear-gradient(to_bottom,#F8F5F0_0%,#F8F5F0_75%,#FFFFFF_75%,#FFFFFF_100%)] md:bg-[linear-gradient(to_bottom,#FFFFFF_0%,#FFFFFF_30%,#F8F5F0_30%,#F8F5F0_100%)] pb-0 md:pb-16 xl:pb-0">
       <div class="theme-grid">
-        <div class="col-span-2 md:col-span-3 xl:col-span-5">
+        <div class="col-span-2 md:col-span-3 xl:col-span-5 order-2 md:order-1">
           <figure class="framed__symmetric--top-right w-full">
             <?php
             $suiten_id = get_field( 'suiten_image' );
@@ -11,7 +11,7 @@
             ?>
           </figure>
         </div>
-        <div class="col-span-2 md:col-span-3 xl:col-span-7 xl:pt-52 xl:pr-20">
+        <div class="col-span-2 md:col-span-3 xl:col-span-7 pt-8 md:pt-[70%] lg:pt-[50%] xl:pt-52 xl:pr-20 pb-10 md:pb-0 order-1 md:order-2">
           <p class="overtitle text-dark-2 mb-4"><?php the_field( 'suiten_overtitle' ); ?></p>
           <h2 class="title-secondary text-dark-2"><?php the_field( 'suiten_title' ); ?></h2>
           <p class="text-dark-2 pt-5 pb-7 xl:py-7"><?php the_field( 'suiten_text' ); ?></p>

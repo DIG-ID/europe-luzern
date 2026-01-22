@@ -46,13 +46,13 @@
           <div class="bankette-seminare-sidebar bg-cream px-5 md:px-5 xl:px-16 py-5 md:py-9 xl:pt-12 xl:pb-16">
             <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'facilities_title' ); ?></h4>
             <div class="facilities-list flex flex-col md:flex-row xl:flex-col xl:justify-between">
-              <div class="list-top-wrapper xl:mb-14 w-full md:w-1/2 xl:w-full">
-                <ul class="list-disc pl-4 xl:pl-5">
+              <div class="list-top-wrapper w-full md:w-1/2 xl:w-full">
+                <ul>
                 <?php
                 if( have_rows('facilities_list_top') ):
                   while( have_rows('facilities_list_top') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-7 xl:pb-1"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-7 xl:pb-5"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
@@ -60,12 +60,12 @@
                 </ul>
               </div>
               <div class="list-bottom-wrapper w-full md:w-1/2 xl:w-full">
-                <ul class="list-disc pl-4 xl:pl-5">
+                <ul>
                 <?php
                 if( have_rows('facilities_list_bottom') ):
                   while( have_rows('facilities_list_bottom') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-7 xl:pb-1"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-7 xl:pb-5"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
