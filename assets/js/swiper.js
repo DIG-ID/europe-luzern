@@ -49,60 +49,96 @@ window.addEventListener("load", () => {
       },
     });
   }
-  
+ 
   if (document.querySelector(".page-template-page-hotel")) {
-  const el = document.querySelector("#testimonials-section .testimonials-swiper");
-  if (!el) return;
+    const el = document.querySelector("#testimonials-section .testimonials-swiper");
+    if (!el) return;
 
-  new Swiper(el, {
-    modules: [Pagination],
-    slidesPerView: 1,
-    spaceBetween: 20,
-    grabCursor: true,
+    new Swiper(el, {
+      modules: [Pagination],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      grabCursor: true,
+      breakpoints: {
+        768: { slidesPerView: 1.5 },
+        1280: { slidesPerView: 2.2, spaceBetween: 28 },
+      },
+      navigation: {
+        nextEl: "#testimonials-section .testimonials-next",
+        prevEl: "#testimonials-section .testimonials-prev",
+      },
+    });
+  }
 
-    breakpoints: {
-        768: {
-        slidesPerView: 1.5,
-        },
-        1280: {
-        slidesPerView: 2.2,
-        spaceBetween: 28,
-        },
-    },
-    navigation: {
-    nextEl: "#testimonials-section .testimonials-next",
-    prevEl: "#testimonials-section .testimonials-prev",
-  },
-  })
-};
 
   if (document.querySelector(".page-template-page-region")) {
-  const activitiesEl = document.querySelector(".activities-swiper");
-  if (activitiesEl) {
-    new Swiper(activitiesEl, {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 600,
-      allowTouchMove: true,
-      navigation: {
-        nextEl: activitiesEl.querySelector(".activities-next"),
-        prevEl: activitiesEl.querySelector(".activities-prev"),
-      },
-    });
-  }
+    const initScopedButtonsSwiper = ({
+      sectionSelector,
+      swiperSelector,
+      nextSelector,
+      prevSelector,
+      datasetKey,
+    }) => {
+      const section = document.querySelector(sectionSelector);
+      if (!section) return;
 
-  const discoverEl = document.querySelector(".discover-swiper");
-  if (discoverEl) {
-    new Swiper(discoverEl, {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 600,
-      allowTouchMove: true,
-      navigation: {
-        nextEl: discoverEl.querySelector(".discover-next"),
-        prevEl: discoverEl.querySelector(".discover-prev"),
-      },
+      const swiperEl = section.querySelector(swiperSelector);
+      if (!swiperEl) return;
+
+      const swiper = new Swiper(swiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 600,
+        allowTouchMove: true,
+      });
+
+      const bindButtons = () => {
+        const nextButtons = section.querySelectorAll(nextSelector);
+        const prevButtons = section.querySelectorAll(prevSelector);
+
+        nextButtons.forEach((btn) => {
+          if (btn.dataset[datasetKey] === "1") return;
+          btn.dataset[datasetKey] = "1";
+
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            swiper.slideNext();
+          });
+        });
+
+        prevButtons.forEach((btn) => {
+          if (btn.dataset[datasetKey] === "1") return;
+          btn.dataset[datasetKey] = "1";
+
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            swiper.slidePrev();
+          });
+        });
+      };
+
+      bindButtons();
+      swiper.on("slideChange", bindButtons);
+
+      return swiper;
+    };
+
+    initScopedButtonsSwiper({
+      sectionSelector: "#activities-section",
+      swiperSelector: ".activities-swiper",
+      nextSelector: ".activities-next",
+      prevSelector: ".activities-prev",
+      datasetKey: "boundActivities",
+    });
+
+    initScopedButtonsSwiper({
+      sectionSelector: "#discover-section",
+      swiperSelector: ".discover-swiper",
+      nextSelector: ".discover-next",
+      prevSelector: ".discover-prev",
+      datasetKey: "boundDiscover",
     });
   }
-}
 });

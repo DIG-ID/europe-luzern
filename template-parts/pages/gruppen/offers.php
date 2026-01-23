@@ -19,20 +19,11 @@
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-8 xl:col-span-5 order-1 md:order-none">
                 <figure class="framed__asymmetric--top-right w-full">
                     <?php
-                    $bg_id = get_field('offers_image');
-                    if ($bg_id) :
-                        echo wp_get_attachment_image(
-                        $bg_id,
-                        'full',
-                        false,
-                        [
-                            'class'    => 'relative inset-0 w-full h-full',
-                            'loading'  => 'eager',
-                            'decoding' => 'async',
-                        ]
-                        );
-                    endif;
-                    ?>
+                        $hero_id = get_field( 'offers_image' );
+                        if ( $hero_id ) :
+                        echo wp_get_attachment_image( $hero_id, 'full', false, array( 'class' => 'relative inset-0 w-full h-full' ) );
+                        endif;
+                        ?>
                 </figures>
             </div>
         </div>
