@@ -8,7 +8,7 @@
  */
 
 ?>
-<section id="section-info" class="section-info bg-white xl:pb-32">
+<section id="section-info" class="section-info bg-white pt-20 md:pt-24 xl:pt-32 pb-20 md:pb-24 xl:pb-32">
   <div class="theme-container">
     <div class="theme-grid">
         <div class="repeater-wrapper col-start-1 col-span-2 md:col-span-6 xl:col-span-12 grid gap-y-5 xl:gap-y-8">
