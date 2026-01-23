@@ -46,7 +46,9 @@ $general_query = new WP_Query([
                   </h2>
                   <div class="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-x-5 gap-y-2">
                     <?php if ( have_rows('facilities_list_top') ) : ?>
+                      <?php $i = 0; ?>
                       <?php while ( have_rows('facilities_list_top') ) : the_row(); ?>
+                        <?php if ( $i >= 4 ) break; ?>
                         <div class="flex items-center justify-start gap-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                             <g clip-path="url(#clip0_2105_9024)">
@@ -60,10 +62,11 @@ $general_query = new WP_Query([
                           </svg>
                           <p class="text-dark-2"><?php the_sub_field('item'); ?></p>
                         </div>
+                        <?php $i++; ?>
                       <?php endwhile; ?>
                     <?php endif; ?>
                   </div>
-                  <p class="text-dark-2 pt-5 pb-7 xl:py-7"><?php the_field('intro_text'); ?></p>
+                  <p class="text-dark-2 pt-5 pb-7 xl:py-7"><?php the_field('intro_text_overview'); ?></p>
                   <a href="<?php the_permalink(); ?>" class="btn btn-primary max-w-56"><?php esc_html_e( 'Mehr erfahren', 'grand-hotel-europe' ) ?></a>
                 </div>
               </div>

@@ -77,7 +77,7 @@ $general_query = new WP_Query([
                 <div class="col-span-2 md:col-span-3 xl:col-span-7 h-auto md:h-full xl:h-auto <?php echo esc_attr($image_order); ?>">
                   <a href="<?php the_permalink(); ?>" class="block">
                     <?php if ( has_post_thumbnail() ) : ?>
-                      <?php the_post_thumbnail('full', [ 'class' => 'w-full h-auto md:h-full xl:h-auto max-h-[400px] md:max-h-[450px] xl:max-h-[458px] min-h-[400px] md:min-h-[450px] xl:min-h-[458px] object-cover md:object-center xl:object-cover' ]); ?>
+                      <?php the_post_thumbnail('full', [ 'class' => 'w-full h-auto md:h-full xl:h-auto max-h-[400px] md:max-h-[450px] xl:max-h-[650px] min-h-[400px] md:min-h-[450px] xl:min-h-[650px] object-cover md:object-center xl:object-cover' ]); ?>
                     <?php endif; ?>
                   </a>
                 </div>
@@ -87,7 +87,9 @@ $general_query = new WP_Query([
                   </h2>
                   <div class="pt-6 grid grid-cols-1 xl:grid-cols-1 gap-x-5 gap-y-2">
                     <?php if ( have_rows('facilities_list_top') ) : ?>
+                      <?php $i = 0; ?>
                       <?php while ( have_rows('facilities_list_top') ) : the_row(); ?>
+                        <?php if ( $i >= 4 ) break; ?>
                         <div class="flex items-center justify-start gap-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                             <g clip-path="url(#clip0_2105_9024)">
@@ -101,10 +103,11 @@ $general_query = new WP_Query([
                           </svg>
                           <p class="text-dark-2"><?php the_sub_field('item'); ?></p>
                         </div>
+                        <?php $i++; ?>
                       <?php endwhile; ?>
                     <?php endif; ?>
                   </div>
-                  <p class="text-dark-2 pt-5 pb-7 xl:pb-7 xl:pt-10"><?php the_field('intro_text'); ?></p>
+                  <p class="text-dark-2 pt-5 pb-7 xl:pb-7 xl:pt-10"><?php the_field('intro_text_overview'); ?></p>
                   <a href="<?php the_permalink(); ?>" class="btn btn-primary max-w-56"><?php esc_html_e( 'Mehr erfahren', 'grand-hotel-europe' ) ?></a>
                 </div>
               </div>
@@ -168,7 +171,7 @@ $bankette_query = new WP_Query([
                   <a href="<?php the_permalink(); ?>" class="block">
                     <?php if ( has_post_thumbnail() ) : ?>
                       <?php the_post_thumbnail('full', [
-                        'class' => 'w-full h-auto md:h-full xl:h-auto max-h-[400px] md:max-h-[450px] xl:max-h-[458px] min-h-[400px] md:min-h-[450px] xl:min-h-[458px] object-cover md:object-center xl:object-cover'
+                        'class' => 'w-full h-auto md:h-full xl:h-auto max-h-[400px] md:max-h-[450px] xl:max-h-[650px] min-h-[400px] md:min-h-[450px] xl:min-h-[650px] object-cover md:object-center xl:object-cover'
                       ]); ?>
                     <?php endif; ?>
                   </a>
@@ -181,7 +184,9 @@ $bankette_query = new WP_Query([
 
                   <div class="pt-6 grid grid-cols-1 xl:grid-cols-1 gap-x-5 gap-y-2">
                     <?php if ( have_rows('facilities_list_top') ) : ?>
+                      <?php $i = 0; ?>
                       <?php while ( have_rows('facilities_list_top') ) : the_row(); ?>
+                        <?php if ( $i >= 4 ) break; ?>
                         <div class="flex items-center justify-start gap-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                             <g clip-path="url(#clip0_2105_9024)">
@@ -195,11 +200,12 @@ $bankette_query = new WP_Query([
                           </svg>
                           <p class="text-dark-2"><?php the_sub_field('item'); ?></p>
                         </div>
+                        <?php $i++; ?>
                       <?php endwhile; ?>
                     <?php endif; ?>
                   </div>
 
-                  <p class="text-dark-2 pt-5 pb-7 xl:pb-7 xl:pt-10"><?php the_field('intro_text'); ?></p>
+                  <p class="text-dark-2 pt-5 pb-7 xl:pb-7 xl:pt-10"><?php the_field('intro_text_overview'); ?></p>
                   <a href="<?php the_permalink(); ?>" class="btn btn-primary max-w-56"><?php esc_html_e( 'Mehr erfahren', 'grand-hotel-europe' ); ?></a>
                 </div>
 

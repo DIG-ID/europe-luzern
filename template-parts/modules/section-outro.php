@@ -52,7 +52,7 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
             $link_title = $outro_button['title'];
             $link_target = $outro_button['target'] ? $outro_button['target'] : '_self';
             ?>
-            <a class="btn btn-transparent max-w-56" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $link_title; ?></a>
+            <a class="btn btn-white-cream max-w-56" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $link_title; ?></a>
         <?php endif; ?>
       </div>
     </div>
