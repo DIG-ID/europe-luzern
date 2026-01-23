@@ -12,8 +12,8 @@
           </figure>
         </div>
         <div class="col-span-2 md:col-span-3 xl:col-span-7 pt-8 md:pt-[70%] lg:pt-[50%] xl:pt-52 xl:pr-20 pb-10 md:pb-0 order-1 md:order-2">
-          <p class="overtitle text-dark-2 mb-4"><?php the_field( 'suiten_overtitle' ); ?></p>
-          <h2 class="title-secondary text-dark-2"><?php the_field( 'suiten_title' ); ?></h2>
+          <h2 class="overtitle text-dark-2 mb-4"><?php the_field( 'suiten_overtitle' ); ?></h2>
+          <h3 class="title-secondary text-dark-2"><?php the_field( 'suiten_title' ); ?></h3>
           <p class="text-dark-2 pt-5 pb-7 xl:py-7"><?php the_field( 'suiten_text' ); ?></p>
           <?php 
           $suiten_button = get_field('suiten_button');

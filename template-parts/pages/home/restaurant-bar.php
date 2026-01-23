@@ -13,8 +13,8 @@
 <div class="theme-container">
   <div class="theme-grid">
     <div class="col-span-2 md:col-span-3 xl:col-span-6">
-      <p class="overtitle text-dark-2 mb-4"><?php the_field( 'restaurant_bar_overtitle' ); ?></p>
-      <h2 class="title-secondary text-dark-2"><?php the_field( 'restaurant_bar_title' ); ?></h2>
+      <h2 class="overtitle text-dark-2 mb-4"><?php the_field( 'restaurant_bar_overtitle' ); ?></h2>
+      <h3 class="title-secondary text-dark-2"><?php the_field( 'restaurant_bar_title' ); ?></h3>
       <p class="text-dark-2 pt-5 pb-7 xl:py-7"><?php the_field( 'restaurant_bar_text' ); ?></p>
       <?php 
         $rb_button = get_field('restaurant_bar_button');

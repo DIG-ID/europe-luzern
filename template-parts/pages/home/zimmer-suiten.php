@@ -13,8 +13,8 @@
   <div class="theme-container">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-4 xl:col-span-12">
-        <p class="overtitle text-dark-2 mb-4"><?php the_field( 'zimmer_suiten_overtitle' ); ?></p>
-        <h2 class="title-secondary text-dark-2 mb-5 xl:mb-10 max-w-72 md:max-w-none"><?php the_field( 'zimmer_suiten_title' ); ?></h2>
+        <h2 class="overtitle text-dark-2 mb-4"><?php the_field( 'zimmer_suiten_overtitle' ); ?></h2>
+        <h3 class="title-secondary text-dark-2 mb-5 xl:mb-10 max-w-72 md:max-w-none"><?php the_field( 'zimmer_suiten_title' ); ?></h3>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1">
         <p class="text-dark-2 mb-7 md:mb-0"><?php the_field( 'zimmer_suiten_text' ); ?></p>

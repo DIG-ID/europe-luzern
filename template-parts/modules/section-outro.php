@@ -38,10 +38,10 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
   <div class="theme-container pt-9 pb-24 md:py-28 xl:pb-24 xl:pt-20 relative z-10">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-6 xl:col-span-12">
-        <p class="overtitle text-white mb-4"><?php echo esc_html( $outro_over ); ?></p>
+        <h2 class="overtitle text-white mb-4"><?php echo esc_html( $outro_over ); ?></h2>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
-        <h2 class="title-secondary text-white mb-5 md:mb-0"><?php echo esc_html( $outro_title ); ?></h2>
+        <h3 class="title-secondary text-white mb-5 md:mb-0"><?php echo esc_html( $outro_title ); ?></h3>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
         <p class="text-white mb-7 xl:mb-14"><?php echo esc_html( $outro_text ); ?></p>
@@ -67,8 +67,8 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
   <div class="theme-container relative z-10 bg-cream border border-gold !w-11/12 xl:!w-full">
     <div class="theme-grid py-14 md:pt-20 md:pb-24">
       <div class="col-span-2 md:col-span-4 xl:col-span-9 xl:pl-14">
-        <p class="overtitle text-dark-2 mb-6 md:mb-4"><?php the_field( 'outro_overtitle', 'option' ); ?></p>
-        <h2 class="title-secondary text-dark-2 mb-7 md:mb-6"><?php the_field( 'outro_title', 'option' ); ?></h2>
+        <h2 class="overtitle text-dark-2 mb-6 md:mb-4"><?php the_field( 'outro_overtitle', 'option' ); ?></h2>
+        <h3 class="title-secondary text-dark-2 mb-7 md:mb-6"><?php the_field( 'outro_title', 'option' ); ?></h3>
         <div class="flex flex-col xl:flex-row mb-20 md:mb-0">
         <?php
         if( have_rows('outro_features_list', 'option') ):

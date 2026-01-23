@@ -16,8 +16,8 @@
         <p class="text-dark-2 pt-0 xl:pt-10 mb-10 md:mb-0"><?php the_field( 'seminare_bankette_text' ); ?></p>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 xl:col-start-8 order-1 md:order-2">
-        <p class="overtitle text-dark-2 mb-4"><?php the_field( 'seminare_bankette_overtitle' ); ?></p>
-        <h2 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php the_field( 'seminare_bankette_title' ); ?></h2>
+        <h2 class="overtitle text-dark-2 mb-4"><?php the_field( 'seminare_bankette_overtitle' ); ?></h2>
+        <h3 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php the_field( 'seminare_bankette_title' ); ?></h3>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-5 order-4 md:order-3">
         <figure class="hidden md:block w-full">
