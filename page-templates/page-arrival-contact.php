@@ -3,7 +3,7 @@
  *
  * Template Name: Arrival & Contact Template
  *
- * @package website-name
+ * @package grand-hotel-europe
  * @subpackage Template
  * @since 1.0.0
  */

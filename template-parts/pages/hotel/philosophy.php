@@ -14,11 +14,8 @@
                 <h3 class="title-small text-darker text-center"><?php the_field( 'philosophy_quote' ); ?></h3>
             </div>
             <div class="repeater-wrapper col-start-1 col-span-2 md:col-span-6 xl:col-span-12 grid gap-y-5 xl:gap-y-8">
-            <?php if ( have_rows('philosophy') ) : ?>
-                <?php while ( have_rows('philosophy') ) : the_row(); ?>
-
-                <?php if ( have_rows('repeater') ) : ?>
-                    <?php while ( have_rows('repeater') ) : the_row();
+                <?php if ( have_rows('philosophy_repeater') ) : ?>
+                    <?php while ( have_rows('philosophy_repeater') ) : the_row();
                     $title = get_sub_field('title');
                     $text  = get_sub_field('text');
                     ?>
@@ -36,8 +33,6 @@
                         </div>
                     </div>
                     <?php endwhile; ?>
-                    <?php endif; ?>
-                <?php endwhile; ?>
                 <?php endif; ?>
             </div>
         </div>

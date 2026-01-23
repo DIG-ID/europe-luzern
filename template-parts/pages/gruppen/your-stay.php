@@ -12,8 +12,8 @@
     <div class="theme-container">
         <div class="theme-grid">
             <div class="col-start-1 col-span-2 md:col-span-5 xl:col-span-8">
-                <p class="overtitle text-dark"><?php the_field( 'your-stay_overtitle' ); ?></p>
-                <h2 class="title-secondary text-darker pt-5"><?php the_field( 'your-stay_title' ); ?></h2>
+                <h2 class="overtitle text-dark"><?php the_field( 'your-stay_overtitle' ); ?></h2>
+                <h3 class="title-secondary text-darker pt-5"><?php the_field( 'your-stay_title' ); ?></h3>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-4 pt-5">
                 <p class="body text-dark font-bold"><?php the_field( 'your-stay_list_one_title' ); ?></p>
@@ -45,18 +45,9 @@
                 <div class="split-image">
                     <figure class="framed__asymmetric--bottom-left w-full">
                         <?php
-                        $bg_id = get_field( 'your-stay_image' );
-                        if ($bg_id) :
-                            echo wp_get_attachment_image(
-                            $bg_id,
-                            'full',
-                            false,
-                            [
-                                'class'    => 'relative w-full h-full object-cover z-10',
-                                'loading'  => 'eager',
-                                'decoding' => 'async',
-                            ]
-                            );
+                        $stay_id = get_field( 'your-stay_image' );
+                        if ( $stay_id ) :
+                        echo wp_get_attachment_image( $stay_id, 'full', false, array( 'class' => 'relative w-full h-full object-cover z-10' ) );
                         endif;
                         ?>
                     </figure>

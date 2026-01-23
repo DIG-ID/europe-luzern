@@ -14,18 +14,9 @@
                 <div class="split-image">
                     <figure class="framed__asymmetric--bottom-left w-full">
                         <?php
-                        $bg_id = get_field( 'bellvue_image' );
-                        if ($bg_id) :
-                            echo wp_get_attachment_image(
-                            $bg_id,
-                            'full',
-                            false,
-                            [
-                                'class'    => 'relative w-full h-full object-cover z-10',
-                                'loading'  => 'eager',
-                                'decoding' => 'async',
-                            ]
-                            );
+                        $bellvue_id = get_field( 'bellvue_image' );
+                        if ( $bellvue_id ) :
+                        echo wp_get_attachment_image( $bellvue_id, 'full', false, array( 'class' => 'relative w-full h-full object-cover z-10' ) );
                         endif;
                         ?>
                     </figure>
