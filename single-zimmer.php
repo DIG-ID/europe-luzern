@@ -1,6 +1,6 @@
 <?php
 /**
- * The Archive Template for the Single Post Type Zimmer
+ * The Single Page Template for the Single Post Type Zimmer
  *
  * @package grand-hotel-europe
  * @subpackage Template

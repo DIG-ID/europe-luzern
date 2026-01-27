@@ -1,6 +1,6 @@
 <?php
 /**
- * The Archive Template for the Single Post Type Seminare
+ * The Single Page Template for the Single Post Type Seminare
  *
  * @package grand-hotel-europe
  * @subpackage Template

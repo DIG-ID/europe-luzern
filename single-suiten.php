@@ -1,6 +1,6 @@
 <?php
 /**
- * The Archive Template for the Single Post Type Suiten.
+ * The Single Page Template for the Single Post Type Suiten.
  *
  * @package grand-hotel-europe
  * @subpackage Template

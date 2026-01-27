@@ -1,0 +1,17 @@
+<?php
+/**
+ * The Single Page Template for the Single Post Type Jobs
+ *
+ * @package grand-hotel-europe
+ * @subpackage Template
+ * @since 1.0.0
+ */
+
+get_header();
+	do_action( 'before_main_content' );
+		get_template_part( 'template-parts/modules/section-hero' );
+		get_template_part( 'template-parts/posts/jobs/content' );
+		get_template_part( 'template-parts/posts/jobs/form' );
+		get_template_part( 'template-parts/modules/section-outro' );
+	do_action( 'after_main_content' );
+get_footer();

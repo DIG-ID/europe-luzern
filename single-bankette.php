@@ -1,6 +1,6 @@
 <?php
 /**
- * The Archive Template for the Single Post Type Bankette
+ * The Single Page Template for the Single Post Type Bankette
  *
  * @package grand-hotel-europe
  * @subpackage Template
