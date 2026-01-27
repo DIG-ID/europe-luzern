@@ -7,9 +7,9 @@
  * @since 1.0.0
  */
 ?>
-<section id="discover-intro-section" class="discover-intro-section bg-white pb-8 md:pb-5 xl:pb-12 pt-20">
+<section id="discover-intro-section" class="discover-intro-section bg-white pb-8 md:pb-5">
   <div class="theme-container">
-    <div class="theme-grid">
+    <div class="theme-grid pt-20 md:pt-0">
       <div class="col-start-1 col-span-2 md:col-span-3 xl:col-start-1 xl:col-span-6">
          <h2 class="overtitle text-dark"><?php echo get_field('discover_overtitle');?></h2>
          <h3 class="title-secondary text-dark xl:max-w-none"><?php echo get_field('discover_title');?></h3>
