@@ -11,17 +11,24 @@
         @extend .title-small
         @apply pl-5 md:pl-32 xl:pl-24 pb-5 xl:pb-0
 
-.entry-content,
-.wp-block-post-content
+.wp-block-post-content,
+.entry-content
   ul,
-  ol
-    list-style-position: inside
-    list-style-type: disc
-    padding-left: 1.25rem
-    margin: 1rem 0
+  ol,
+  .wp-block-list
+    text-align: left !important
+    list-style-position: outside !important
+    padding-left: 1.5rem !important
+    margin: 1rem 0 1.5rem !important
+
+  ul,
+  .wp-block-list
+    list-style-type: disc !important
 
   ol
-    list-style-type: decimal
+    list-style-type: decimal !important
 
   li
-    margin: .4rem 0
+    display: list-item !important
+    padding-left: 0 !important
+    margin: .35rem 0
