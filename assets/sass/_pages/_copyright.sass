@@ -1,34 +1,52 @@
 .page-template-page-copyright
-    p
-        @extend body 
-        @apply pl-5 md:pl-32 pr-6 md:pr-32 xl:pr-24
+  p
+    @extend body
+    @apply pl-5 md:pl-32 pr-6 md:pr-32 xl:pr-24
 
-    .wp-block-group
-        @apply bg-cream mb-8 pb-14 pt-14
-    h2
-        @extend .title-secondary
-    h3
-        @extend .title-small
-        @apply pl-5 md:pl-32 xl:pl-24 pb-5 xl:pb-0
+  .wp-block-group
+    @apply bg-cream mb-8 pb-14 pt-14
 
-.wp-block-post-content,
-.entry-content
-  ul,
-  ol,
-  .wp-block-list
-    text-align: left !important
-    list-style-position: outside !important
-    padding-left: 1.5rem !important
-    margin: 1rem 0 1.5rem !important
+  h2
+    @extend .title-secondary
 
-  ul,
-  .wp-block-list
-    list-style-type: disc !important
+  h3
+    @extend .title-small
+    @apply pl-5 md:pl-32 xl:pl-24 pb-5 xl:pb-0
 
-  ol
-    list-style-type: decimal !important
+  // TOP 2 COLUMNS LAYOUT
+  #wp-container-core-columns-is-layout-9d6595d7
+    @apply flex flex-row justify-center gap-[30px] flex-wrap
 
-  li
-    display: list-item !important
-    padding-left: 0 !important
-    margin: .35rem 0
+    > .wp-block-column
+      @apply w-full max-w-[571px] flex-[0_1_571px]
+
+  // Mobile stack (same level as the container, not nested wrong)
+  @media (max-width: 768px)
+    #wp-container-core-columns-is-layout-9d6595d7
+      @apply flex-col gap-[20px]
+
+      > .wp-block-column
+        @apply max-w-full flex-auto
+
+  // LIST FIX (proper nesting)
+  .wp-block-post-content,
+  .entry-content
+    ul,
+    ol,
+    .wp-block-list
+      text-align: left !important
+      list-style-position: outside !important
+      padding-left: 1.5rem !important
+      margin: 1rem 0 1.5rem !important
+
+    ul,
+    .wp-block-list
+      list-style-type: disc !important
+
+    ol
+      list-style-type: decimal !important
+
+    li
+      display: list-item !important
+      padding-left: 0 !important
+      margin: .35rem 0

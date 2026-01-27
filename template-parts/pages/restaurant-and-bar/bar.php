@@ -26,7 +26,7 @@
             <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-7 xl:col-span-5 pt-5 xl:pt-0 md:pb-32 xl:pb-0">
                 <p class="body text-darker"><?php the_field( 'bar_text' ); ?></p>
             </div>
-                <div class="button-wrapper col-start-1 col-span-2 md:col-start-5 md:col-span-2 xl:col-start-7 xl:col-span-6 pt-7 md:pt-5 xl:gap-x-20 pb-24 md:pb-0 xl:pb-32">
+                <div class="button-wrapper col-start-1 col-span-2 md:col-start-5 md:col-span-2 xl:col-start-7 xl:col-span-6 pt-7 md:pt-10 xl:gap-x-20 pb-24 md:pb-0 xl:pb-32">
                     <?php 
                     $bar_button = get_field('bellvue_button');
                     if( $bar_button ): 
