@@ -148,6 +148,44 @@ function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 	return 'core';
 }
 
+/**
+ * CF7: Fallback for post-related special mail tags when output is empty.
+ */
+add_filter(
+	'wpcf7_special_mail_tags',
+	function ( $output, $tag_name, $html, $mail_tag ) {
+		$needs_fallback = ( null === $output || '' === $output );
+
+		if ( ! $needs_fallback ) {
+			return $output;
+		}
+
+		$post_id = get_queried_object_id();
+		if ( ! $post_id ) {
+			return $output;
+		}
+
+		switch ( $tag_name ) {
+			case '_post_title':
+				return wp_strip_all_tags( get_the_title( $post_id ) );
+
+			case '_post_url':
+				return esc_url( get_permalink( $post_id ) );
+
+			case '_post_id':
+				return (string) $post_id;
+
+			case '_post_name':
+				$post = get_post( $post_id );
+				return $post ? (string) $post->post_name : $output;
+		}
+
+		return $output;
+	},
+	20,
+	4
+);
+
 add_filter( 'wpseo_metabox_prio', 'ghe_theme_lower_yoast_metabox_priority' );
 
 
