@@ -7,7 +7,11 @@
  * @since 1.0.0
  */
 ?>
-<section id="bellvue-section" class="bellvue-section pb-20 md:pb-24 xl:pb-20">
+<section id="bellvue-section" class="bellvue-section 
+    bg-[linear-gradient(to_bottom,theme(colors.white)_0%,theme(colors.white)_10%,theme(colors.cream)_10%,theme(colors.cream)_100%)]
+    md:bg-[linear-gradient(to_bottom,theme(colors.white)_0%,theme(colors.white)_12%,theme(colors.cream)_12%,theme(colors.cream)_100%)]
+    xl:bg-[linear-gradient(to_bottom,theme(colors.white)_0%,theme(colors.white)_15%,theme(colors.cream)_15%,theme(colors.cream)_100%)]
+    pb-20 md:pb-24 xl:pb-20">
     <div class="theme-container">
         <div class="theme-grid">
             <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12 pb-12 xl:pb-24">

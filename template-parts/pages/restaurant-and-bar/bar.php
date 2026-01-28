@@ -7,7 +7,11 @@
  * @since 1.0.0
  */
 ?>
-<section id="bar-section" class="bar-section bg-cream pb-20 md:pb-32 xl:pb-48">
+<section id="bar-section" class="bar-section
+    bg-[linear-gradient(to_bottom,theme(colors.white)_0%,theme(colors.white)_6%,theme(colors.cream)_6%,theme(colors.cream)_100%)]
+    md:bg-[linear-gradient(to_bottom,theme(colors.white)_0%,theme(colors.white)_8%,theme(colors.cream)_8%,theme(colors.cream)_100%)]
+    xl:bg-[linear-gradient(to_bottom,theme(colors.white)_0%,theme(colors.white)_5%,theme(colors.cream)_5%,theme(colors.cream)_100%)]
+    pb-20 md:pb-32 xl:pb-48">
     <div class="theme-container">
         <div class="theme-grid">
             <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-6 xl:col-start-1 xl:col-span-12 md:pb-12 xl:pb-24">

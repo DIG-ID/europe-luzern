@@ -21,26 +21,28 @@ $email_content = get_field('intro_email_content');
 ?>
 
 <section id="section-intro" class="section-intro xl:pt-0 pb-20 md:pb-24 xl:pb-36">
-  <!-- MAP (replaces intro image) -->
-  <?php if ( $location ) : ?>
-    <div class="theme-container pt-10 md:pt-12">
-      <div class="theme-grid">
-        <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12">
-          <?php if ( is_array($location) && !empty($location['lat']) && !empty($location['lng']) ) : ?>
-            <div class="acf-map" data-zoom="17" data-zoom-mobile="16">
-              <div class="marker"
-                data-lat="<?php echo esc_attr($location['lat']); ?>"
-                data-lng="<?php echo esc_attr($location['lng']); ?>">
-              </div>
-            </div>
-            <?php endif; ?>
+	<?php if ( ! is_post_type_archive( 'jobs' ) ) : ?>
+		<?php if ( is_front_page() ) : ?>
+			<div class="w-[1px] md:w-[1px] h-[56px] xl:h-[56px] bg-gold mx-auto" aria-hidden="true"></div>
+			<div class="w-[128px] md:w-[690px] h-[1px] xl:h-[1px] bg-gold mb-4 md:mb-5 xl:mb-[30.5px] mx-auto" aria-hidden="true"></div>
+		<?php else : ?>  
+			<div class=" w-[0px] md:w-[690px] :h-[0px] xl:h-[1px] bg-gold xl:mb-[30.5px] mt-10 md:mt-12 xl:mt-14 mx-auto" aria-hidden="true"></div>
+		<?php endif; ?>
+		<div class="intro-image px-6 md:px-14">
+			    <figure class="framed__asymmetric--bottom-both w-full h-full md:h-auto">
+      <?php if ( is_array($location) && !empty($location['lat']) && !empty($location['lng']) ) : ?>
+        <div class="acf-map" data-zoom="17" data-zoom-mobile="16">
+          <div class="marker"
+            data-lat="<?php echo esc_attr($location['lat']); ?>"
+            data-lng="<?php echo esc_attr($location['lng']); ?>">
           </div>
         </div>
-      </div>
-    </div>
-  <?php endif; ?>
-
-  <div class="theme-container pt-11 md:pt-16">
+        <?php endif; ?>
+      </figure>
+		</div>
+	<?php endif; ?>
+  
+    <div class="theme-container pt-11 md:pt-16">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
         <?php if ( $intro_title ) : ?>
@@ -73,8 +75,8 @@ $email_content = get_field('intro_email_content');
               </div>
               <!-- Text -->
                <div class="flex-row">
-                <p class="text-darker pb-3"><?php echo $phone; ?></p>
-                <p class="text-darker"><?php echo $phone_content; ?></p>
+                <p class="title-smaller font-gilda !text-[16px] md:!text-[20px] text-darker pb-3"><?php echo $phone; ?></p>
+                <p class="body font-barlow text-darker"><?php echo $phone_content; ?></p>
                </div>
             </div>
           <?php endif; ?>
@@ -89,8 +91,8 @@ $email_content = get_field('intro_email_content');
                 </svg>
               </div>
               <div class="flex-row">
-                <p class="text-darker pb-3"><?php echo $email; ?></p>
-                <p class="text-darker"><?php echo $email_content; ?></p>
+                <p class="title-smaller font-gilda !text-[16px] md:!text-[20px] text-darker pb-3"><?php echo $email; ?></p>
+                <p class="body font-barlow text-dark"><?php echo $email_content; ?></p>
               </div>
         </div>
       <?php endif; ?>
@@ -105,8 +107,8 @@ $email_content = get_field('intro_email_content');
               </svg>
             </div>
             <div class="flex-row">
-              <p class="text-darker pb-3"><?php echo $address; ?></p>
-              <p class="text-darker"><?php echo $address_content; ?></p>
+              <p class="title-smaller font-gilda !text-[16px] md:!text-[20px] text-darker pb-3"><?php echo $address; ?></p>
+              <p class="body font-barlow text-darker"><?php echo $address_content; ?></p>
             </div>
         </div>
       <?php endif; ?>
