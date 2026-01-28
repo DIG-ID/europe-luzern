@@ -148,7 +148,7 @@ function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 	return 'core';
 }
 
-<?php
+
 /**
  * Ensure CF7 knows the container post/page even when the form is output via do_shortcode().
  */
