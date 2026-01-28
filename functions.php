@@ -148,43 +148,62 @@ function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 	return 'core';
 }
 
+<?php
 /**
- * CF7: Fallback for post-related special mail tags when output is empty.
+ * Ensure CF7 knows the container post/page even when the form is output via do_shortcode().
  */
-add_filter(
-	'wpcf7_special_mail_tags',
-	function ( $output, $tag_name, $html, $mail_tag ) {
-		$needs_fallback = ( null === $output || '' === $output );
+add_filter( 'wpcf7_form_hidden_fields', function ( $hidden_fields ) {
+	$post_id = get_queried_object_id();
 
-		if ( ! $needs_fallback ) {
-			return $output;
-		}
+	if ( $post_id ) {
+		// This is the key field CF7 uses to resolve [_post_*] mail-tags.
+		$hidden_fields['_wpcf7_container_post'] = (string) $post_id;
+	}
 
-		$post_id = get_queried_object_id();
-		if ( ! $post_id ) {
-			return $output;
-		}
+	return $hidden_fields;
+}, 10, 1 );
 
-		switch ( $tag_name ) {
-			case '_post_title':
-				return wp_strip_all_tags( get_the_title( $post_id ) );
-
-			case '_post_url':
-				return esc_url( get_permalink( $post_id ) );
-
-			case '_post_id':
-				return (string) $post_id;
-
-			case '_post_name':
-				$post = get_post( $post_id );
-				return $post ? (string) $post->post_name : $output;
-		}
-
+/**
+ * Fallback: resolve [_post_*] in AJAX/REST submissions where there is no queried object.
+ */
+add_filter( 'wpcf7_special_mail_tags', function ( $output, $tag_name, $html ) {
+	if ( ! empty( $output ) ) {
 		return $output;
-	},
-	20,
-	4
-);
+	}
+
+	if ( ! class_exists( 'WPCF7_Submission' ) ) {
+		return $output;
+	}
+
+	$submission = WPCF7_Submission::get_instance();
+	if ( ! $submission ) {
+		return $output;
+	}
+
+	$posted  = $submission->get_posted_data();
+	$post_id = isset( $posted['_wpcf7_container_post'] ) ? absint( $posted['_wpcf7_container_post'] ) : 0;
+
+	if ( ! $post_id ) {
+		return $output;
+	}
+
+	switch ( $tag_name ) {
+		case '_post_title':
+			return wp_strip_all_tags( get_the_title( $post_id ) );
+
+		case '_post_url':
+			return esc_url( get_permalink( $post_id ) );
+
+		case '_post_id':
+			return (string) $post_id;
+
+		case '_post_name':
+			$post = get_post( $post_id );
+			return $post ? (string) $post->post_name : $output;
+	}
+
+	return $output;
+}, 20, 3 );
 
 add_filter( 'wpseo_metabox_prio', 'ghe_theme_lower_yoast_metabox_priority' );
 
