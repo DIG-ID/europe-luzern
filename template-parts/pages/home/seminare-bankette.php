@@ -19,12 +19,12 @@
         <h2 class="overtitle text-dark-2 mb-4"><?php the_field( 'seminare_bankette_overtitle' ); ?></h2>
         <h3 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php the_field( 'seminare_bankette_title' ); ?></h3>
       </div>
-      <div class="col-span-2 md:col-span-3 xl:col-span-5 order-4 md:order-3">
+      <div class="col-span-2 md:col-span-3 xl:col-span-5 order-4 md:order-3 xl:flex xl:flex-col xl:justify-end">
         <figure class="hidden md:block w-full">
           <?php
           $sb_id = get_field( 'seminare_bankette_image_1' );
           if ( $sb_id ) :
-            echo wp_get_attachment_image( $sb_id, 'full', false, array( 'class' => 'w-full h-full object-cover md:mt-5 xl:mt-20' ) );
+            echo wp_get_attachment_image( $sb_id, 'full', false, array( 'class' => 'w-full h-full object-cover md:mt-5 xl:mt-0' ) );
           endif;
           ?>
         </figure>
