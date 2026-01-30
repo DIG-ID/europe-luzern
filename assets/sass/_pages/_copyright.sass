@@ -4,7 +4,7 @@
     //@apply pl-5 md:pl-32 pr-6 md:pr-32 xl:pr-24
 
   .wp-block-group
-    @apply mb-8 pb-14 pt-14 //bg-cream
+    @apply mb-8 pb-14 pt-14 
 
   h2
     @extend .title-secondary
@@ -12,6 +12,13 @@
   h3
     @extend .title-small
     @apply pb-5 xl:pb-0 //pl-5 md:pl-32 xl:pl-24
+    
+  ul 
+  @extend body
+  @apply mb-6 list-inside
+  li
+    @apply list-disc ml-5 mb-1
+
 
   .wp-block-heading
     @apply pb-4
@@ -31,30 +38,10 @@
       > .wp-block-column
         @apply max-w-full flex-auto
 
-  // LIST FIX (proper nesting)
-  .wp-block-post-content,
-  .entry-content
-    ul,
-    ol,
-    .wp-block-list
-      text-align: left !important
-      list-style-position: outside !important
-      padding-left: 1.5rem !important
-      margin: 1rem 0 1.5rem !important
-
-    ul,
-    .wp-block-list
-      list-style-type: disc !important
-
-    ol
-      list-style-type: decimal !important
-
-    li
-      display: list-item !important
-      padding-left: 0 !important
-      margin: .35rem 0
-
   .impessum-content
     @apply bg-white pb-24
   .impessum-title
     @apply h-28 pb-8 max-w-56
+
+  .card
+    @apply bg-darker
