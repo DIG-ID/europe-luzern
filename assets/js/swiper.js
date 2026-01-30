@@ -45,10 +45,14 @@ window.addEventListener("load", () => {
     const thumbs = new Swiper('.gallery-thumbs-swiper-bs', {
       slidesPerView: 'auto',
       spaceBetween: 14,
+      loop: true,
+      centeredSlides: true,
+      centeredSlidesBounds: false,
+      slideToClickedSlide: true,
       watchSlidesProgress: true,
     });
 
-    new Swiper('.gallery-images-swiper-bs', {
+    const slider = new Swiper('.gallery-images-swiper-bs', {
       slidesPerView: 1,
       loop: true,
       speed: 900,
@@ -60,6 +64,15 @@ window.addEventListener("load", () => {
       thumbs: {
         swiper: thumbs,
       },
+      on: {
+        afterInit() {
+          thumbs.update();
+          thumbs.slideToLoop(this.realIndex, 0);
+        },
+        slideChange() {
+          thumbs.slideToLoop(this.realIndex, 300);
+        }
+      }
     });
   }
  
