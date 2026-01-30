@@ -18,16 +18,27 @@ if ($gallery_ids && is_array($gallery_ids)) :
     <!-- Main slider -->
     <div class="swiper gallery-images-swiper">
       <div class="swiper-wrapper">
-        <?php foreach ($gallery_ids as $img_id) :
+        <?php
+        foreach ($gallery_ids as $img_id) :
+          echo '<div class="swiper-slide">'. wp_get_attachment_image( $img_id, 'full', false, array( 'class' => 'w-full h-auto object-cover', 'sizes' => '(min-width: 1280px) 1170px, 100vw' ) ) . '</div>';
+         endforeach;
+         ?>
+        <?php
+        /**
+         
+        foreach ($gallery_ids as $img_id) :
           $img_url = wp_get_attachment_image_url($img_id, 'zimmer-suiten-gallery');
           $img_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
           if (!$img_alt) $img_alt = get_the_title($img_id);
           if (!$img_url) continue;
+          ?>
+            <div class="swiper-slide">
+              <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($img_alt); ?>" class="w-full h-auto block object-cover" />
+            </div>
+          <?php
+        endforeach;
+        */
         ?>
-          <div class="swiper-slide">
-            <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($img_alt); ?>" class="w-full h-auto block object-cover" />
-          </div>
-        <?php endforeach; ?>
       </div>
     </div>
   </div>
