@@ -9,10 +9,14 @@ window.addEventListener("load", () => {
     const thumbs = new Swiper('.gallery-thumbs-swiper', {
       slidesPerView: 'auto',
       spaceBetween: 14,
+      loop: true,
+      centeredSlides: true,
+      centeredSlidesBounds: false,
+      slideToClickedSlide: true,
       watchSlidesProgress: true,
     });
 
-    new Swiper('.gallery-images-swiper', {
+    const slider = new Swiper('.gallery-images-swiper', {
       slidesPerView: 1,
       loop: true,
       speed: 900,
@@ -24,6 +28,15 @@ window.addEventListener("load", () => {
       thumbs: {
         swiper: thumbs,
       },
+      on: {
+        afterInit() {
+          thumbs.update();
+          thumbs.slideToLoop(this.realIndex, 0);
+        },
+        slideChange() {
+          thumbs.slideToLoop(this.realIndex, 300);
+        }
+      }
     });
   }
 
