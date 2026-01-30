@@ -11,14 +11,15 @@
 
   h3
     @extend .title-small
-    @apply pb-5 xl:pb-0 //pl-5 md:pl-32 xl:pl-24
+    @apply pb-5 xl:pb-0
     
   ul 
     @extend body
     @apply mb-6 list-inside
     li
       @apply list-disc ml-5 mb-1
-
+  a
+    @apply underline
 
   .wp-block-heading
     @apply pb-4
@@ -41,7 +42,13 @@
   .impessum-content
     @apply bg-white pb-24
   .impessum-title
-    @apply h-28 pb-8 max-w-56
+    @apply h-28 pb-8 max-w-96
 
-  .card
-    @apply bg-darker
+  .copyright-card
+    @apply bg-cream mb-8 pb-14 pt-14 
+  .copyright-card-title
+    @apply pl-5 md:pl-32 xl:pl-24
+  .copyright-card-content
+    @apply xl:max-w-[471px] xl:pr-24
+  .privacy-intro-text
+    @apply pb-20 md:pb-24
