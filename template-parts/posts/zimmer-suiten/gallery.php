@@ -20,7 +20,7 @@ if ($gallery_ids && is_array($gallery_ids)) :
       <div class="swiper-wrapper">
         <?php
         foreach ($gallery_ids as $img_id) :
-          echo '<div class="swiper-slide">'. wp_get_attachment_image( $img_id, 'full', false, array( 'class' => 'w-full h-auto object-cover', 'sizes' => '(min-width: 1280px) 1170px, 100vw' ) ) . '</div>';
+          echo '<div class="swiper-slide">'. wp_get_attachment_image( $img_id, 'full', false, array( 'class' => 'w-full h-auto max-h-[689px] object-cover', 'sizes' => '(min-width: 1280px) 1170px, 100vw' ) ) . '</div>';
          endforeach;
          ?>
         <?php
